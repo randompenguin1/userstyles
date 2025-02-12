@@ -108,8 +108,8 @@ Just because it looks right or works in your preferred browser or device doesn't
 
 ---
 Contributors:
-Kristi H. @kmh@friendica.world
+Pygoscelis Papua @randompenguin@friendica.world
 feb @feb@loma.ml
-Phil phil@loma.ml
+Phil @phil@loma.ml
 
 License: AGPL 3.0 or Later
