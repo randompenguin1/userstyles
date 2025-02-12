@@ -556,7 +556,7 @@ header #banner {
 		clear: both !important;
 	}
 	/* make textareas resize in the correct direction */
-	textarea {
+	body.mod-settings textarea {
 		resize: vertical !important;
 	}
 /* Other people profiles */
