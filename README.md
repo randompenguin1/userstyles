@@ -9,10 +9,24 @@ If the Friendica server you are on does not offer the Bookface theme modificatio
 
 You have two options if you are using the Firefox browser (or any browser based on it):
 
-1. Copy and Paste the code into a "userContent.css" file placed in the "chrome" folder of your profile. You will need to wrap the code with:
- `@-moz-document domain(friendica.world){...}` (change the domain name from "friendica.world" to whichever server you are on).
+1. Type `about:support` into the address bar.
+2. Find “Profile Folder” and open that location
+3. Create a folder named "chrome" there if one doesn’t already exist (it probably doesn’t)
+4. Create a file in that folder named “userContent.css”
+5. Add an entry to that file like this:
+>>>>
+	@-moz-document domain(friendica.world){
+        
+	}
+>>>>
+(change “_friendica.world_” to whatever instance you are on)
 
-1. Use the [Stylus Add-On](https://addons.mozilla.org/en-US/firefox/addon/styl-us/) and copy and paste the code into that.
+6. Copy and Paste the entire contents of the _bookface_light_userstyles.css_ or _bookface_dark_userstyles.css_ **inside** the {…} 
+7. Restart Firefox and go to your Friendica instance and enjoy a modern Friendica experience.
+
+Alternatively:
+
+Install and enable the [Stylus Add-On](https://addons.mozilla.org/en-US/firefox/addon/styl-us/) for Firefox then copy and paste the code from either _bookface_light_userstyles.css_ or _bookface_dark_userstyles.css_ into that.
 
 **CHROME**
 
@@ -28,7 +42,7 @@ Next, in Friendica, go to _Settings > Display > Theme_ and make sure it is set t
 
 If you are using the "Light" version then go to _Settings > Display > Theme Customization_ and make sure it is set to either "Light" or "Custom."  If you set it to "Custom" you should copy and paste this schemestring for the best appearance:
 
-`{"nav_bg":"#ffffff","nav_icon_color":"#606637","link_color":"#0866ff","background_color":"#f2f4f7","background_image":"","contentbg_transp":"100"}`
+`{"nav_bg":"#ffffff","nav_icon_color":"#65686C","link_color":"#0066ff","background_color":"#f2f4f7","background_image":"","contentbg_transp":"100"}`
 
 If you are using the "Dark" version then go to _Settings > Display > Theme Customization_ and set it to either "Dark" or "Black." There is no way to also use a schemestring with "Bookface Dark."
 
