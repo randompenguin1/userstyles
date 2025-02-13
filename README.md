@@ -107,6 +107,10 @@ In some places fallbacks are included to accommodate older browsers or mobile de
 Just because it looks right or works in your preferred browser or device doesn't mean it will work for everyone. **Try to thoroughly *test* your edits** in desktop and mobile Chromium-based, Mozilla-based, and Webkit-based browsers before submitting a pull-request.
 
 ## CHANGELOG:
+* fixed browser "Share to.." button display and sizing [Issue #3]
+* fixed wrong sized menu items in action button drop-downs on mobile [related to Issue #3]
+* Styled content filter buttons coming from other platforms.
+
 1.4 (12 Feb 2025)
 * Limited textarea resize fix to settings pages
 * Edited authors/contributors
