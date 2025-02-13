@@ -1,8 +1,8 @@
 /*
 	Name	   : Bookface Light User Styles
-	Version    : 1.3.1
+	Version    : 1.4
     Licence    : AGPL
-    Created on : 11 Feb 2025
+    Created on : 12 Feb 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
     
 	This "user styles" stylesheet will override Friendica and style it more like Facebook.
@@ -945,7 +945,9 @@
 		   border-color: transparent  !important;
 		   background-color: transparent  !important;
 	}
-		   
+	.fbrowser-content-container.justified-gallery {
+    	max-height: 100% !important;
+	}			   		   
 	#jot-title,
 	#jot-category {
 		   background-color: #fff  !important;
@@ -2102,6 +2104,9 @@ a.tag.label,
 		}	
 	}
 /* LOGIN AND INFO SCREENS */
+body.mod-home {
+	padding-top: 10px !important;
+}
 .mod-home .navbar,
 .mod-home #topbar-second{
 	background-color: transparent !important;
