@@ -1,5 +1,5 @@
 # Bookface User Styles for Friendica
-Version: 1.3.1
+Version: 1.4
 
 If the Friendica server you are on does not offer the Bookface theme modifications you can apply them in your browser. You can only use either the Light or Dark version.
 
@@ -105,6 +105,100 @@ These are client-side user content stylesheets which means pretty much *everythi
 In some places fallbacks are included to accommodate older browsers or mobile devices that do not understand more modern code. In general the target for this scheme are browsers released within the last couple of years.
 
 Just because it looks right or works in your preferred browser or device doesn't mean it will work for everyone. **Try to thoroughly *test* your edits** in desktop and mobile Chromium-based, Mozilla-based, and Webkit-based browsers before submitting a pull-request.
+
+## CHANGELOG:
+1.4 (12 Feb 2025)
+* Limited textarea resize fix to settings pages
+* Edited authors/contributors
+* Edited README for clarity
+* Switched README from plaintext to markdown
+* fixed file browser scroll height issue
+* fixed too much padding at top of login page
+* Added changelog to user styles README
+
+1.3 (11 Feb 2025)
+* Added "Auto" version that automatically detects OS light/dark color mode and applies it.
+* Color and position of Admin "Save" buttons normalized to rest of settings.
+* Normalized Admin "Save/Submit" buttons style and position (including all Add-Ons settings).
+* Brand Text positioned and styled to match color scheme
+* Advanced Content Filter add-on help table overflow fixed.
+* Added "Sign-In" text to button when not signed in because a friend specifically said he couldn't figure out WHERE to sign-in/register.
+* User Menu overflow-x is now hidden (who likes horizontal scrollbars?)
+* Selected nav on :focus styling fixed.
+* Edit Photo image no longer spills out of container on mobile.
+* "Submit" photo edits button moved right.
+* Fixed photo album thumbnails spilling out of page container.
+* Made spacing of photo album thumbnails even.
+* Profile photo in second toolbar mini-vcard rounded 
+* Landscape on small screen phones hides toolbars and displays limited buttons
+* Mobile mode completely revamped for modern app-like behavior
+* Support for profile "Cover Photo"
+* Added CSS variables to easily localize pseudo-element text labels
+* Added CSS variable to separately set engagement count background color (default is still link color)
+* CSS line numbers synchronized between light and dark stylesheets for easier maintenance
+* Profile photos in Messages are now circular
+* Event Card now has roundy buttons
+* popover/hovercards borders and arrows restyled
+* Tags, Mentions, and Categories buttons restyled larger but less distracting.
+* Shared post now has background color of a top-level post.
+* New Message button styled for Mobile
+* Brand Icon switched from SVG to icon font because SVG masks are broken in Webkit browsers.
+* Light and Dark versions now support custom Link Color, with error catching to prevent setting it to the same color as nav or page background.
+* Event Response button positions fixed for old Safari Mobile.
+* Login screen layout fixed [GitLab issue #2]
+* Info screen fixed.
+* Fixed overflow dropdown menu hover effect
+* Fixed overflow dropdown menu active styling
+* "Compose" button on Personal Notes page changed to "New Note"
+* Added lock icon to "Personal Notes" header to make it clear they are not public.
+
+
+1.2 (25 Jan 2025)
+* "Save" buttons for "Remote Servers" settings normalized to right.
+* "Close" button and open "Compose" button restyled, "Close" enlarged for better touch target.
+* Open Compose Page button styled to match roundy buttons.
+* "Save Search" buttons styles to match "Compose" and "Mention" buttons.
+* Dark version Settings container background color fixed.
+* Comment Box background fixed.
+* Compose/Comment text style buttons enlarged for better touch targets, styled to match on Compose Modal, Compose Page, and Comment below post.
+* Aside Selected Menu item now adopts color scheme.
+* All Modal File browsers now styled the same.
+* IFRAME container positioned and styled (usually used for embedded video)
+* Fixed "Like/Dislike" on photos showing label twice.
+* TopBar Second vcard short photo made round.
+
+1.1 (21 Jan 2025)
+* Fixes long lists of tags/mentions spilling out of post or profile container, forces them to wrap to multiple rows as necessary.
+* Adds spacing to left of multiple settings buttons floated to right.
+
+1.0 (20 Jan 2025)
+* Initial release of server-side version
+* Accent colors now work (server-side version only)
+* Compose Title border radius normalized to rest of inputs.
+* Top Bar buttons fixed for small mobile screens.
+* Delegate "Save" settings button normalized to right side.
+* Form input background colors normalized.
+
+0.4 (18 Jan 2025)
+* Adds "superscript" engagement numbers to mobile Action Buttons.
+* Settings "Submit" buttons normalized to right-hand placement.
+* "Mention" button and "Compose" buttons sizing normalized.
+* Compose Modal/Page and Reply now styled.
+* File Attachment Button hidden in Compose File Browser.
+* Adjustment to Event RSVP buttons for both desktop and mobile.
+* Styling and adjustment to Profile Extra links.
+* Changed Network Links from "Link:" text to buttons style with chevron.
+
+0.3 (16 Jan 2025)
+* Light and Dark mode user stylesheets.
+* Light version first adapted to theme template/scheme for server-side.
+* Added "superscript" engagement numbers to desktop Action Buttons
+
+0.2 (13 Jan 2025)
+* Added labels to Action Buttons.
+
+0.1 (12 Jan 2025)
+* Based on original bookface.css user stylesheet (light mode only)
 
 ---
 Contributors:
