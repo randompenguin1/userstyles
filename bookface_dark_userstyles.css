@@ -41,6 +41,7 @@
     --border-color: #333333;
     --count-color:  #ffffff;
     --count-bg: var(--link-color);
+	--attach-file-button: none; /* none or block */
     
     /* LOCALIZE pseudo-element text below */
     --sign-in-text: 'Sign-In';
@@ -1025,8 +1026,9 @@ aside .widget,
     	to posts either comment out this rule or change "none" to "block"
     */ 
     .fbswitcher [data-mode="attachment"] {
-           display: none  !important;
+           display: var(--attach-file-button) !important;
     }
+
 /* PROFILE */
 #profile-photo-wrapper {
     overflow: visible  !important;
@@ -1540,6 +1542,13 @@ a.tag.label,
 		width: 140px  !important;
 	}
 }
+/* Frio breakpoints for smaller profile pic */
+	@media screen and (min-width:991px) and (max-width:1199px){
+		.contact-block-img {
+			height: 75px !important;
+			width: 75px !important;
+		}
+	}
 /*	Large Tablets in Portrait Orientation
 	=====================================
 */
