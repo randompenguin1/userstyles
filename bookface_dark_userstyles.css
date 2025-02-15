@@ -1016,15 +1016,7 @@ aside .widget,
      #upload-photo:focus {
         background-color: darkblue  !important;
     }
-    /* 	HIDE ATTACHMENT BUTTON
-    	=======================
-    	This hides the file attachment button in the Compose "Browser" tab
-    	because there is no way to manage/delete uploaded attachments it
-    	was a design choice of this theme mod to hide this button from users.
-    	
-    	If you WANT users to be able to see uploaded files and attach them
-    	to posts either comment out this rule or change "none" to "block"
-    */ 
+    /* 	HIDE ATTACHMENT BUTTON */ 
     .fbswitcher [data-mode="attachment"] {
            display: var(--attach-file-button) !important;
     }
