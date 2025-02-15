@@ -73,6 +73,7 @@ For your convenience all of the colors and pseudo-element labels are defined in 
     --border-color: #eeeeee;
     --count-color:  #ffffff;
     --count-bg: var(--link-color);
+    --attach-file-button: none; /* none or block */
     
     /* LOCALIZE pseudo-element text below */
     --sign-in-text: 'Sign-In';
@@ -110,6 +111,8 @@ Just because it looks right or works in your preferred browser or device doesn't
 * fixed browser "Share to.." button display and sizing [Issue #3]
 * fixed wrong sized menu items in action button drop-downs on mobile [related to Issue #3]
 * Styled content filter buttons coming from other platforms.
+* Attach file button moved to CSS variable
+* Profile contacts size adjust for Frio breakpoints
 
 1.4 (12 Feb 2025)
 * Limited textarea resize fix to settings pages
