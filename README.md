@@ -115,6 +115,7 @@ Just because it looks right or works in your preferred browser or device doesn't
 * Profile contacts size adjust for Frio breakpoints
 * Fixed Category & Folder tag-buttons [Issue #4]
 * Removed text shadow from tags [Issue #5]
+* Unstyled Comment button on other people's profiles [Issue #7]
 
 1.4 (12 Feb 2025)
 * Limited textarea resize fix to settings pages
