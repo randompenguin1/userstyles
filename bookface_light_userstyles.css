@@ -1019,6 +1019,14 @@
 		#upload-photo:focus {
 			background-color: darkblue  !important;
 		}
+    .panel-body {
+    	background-color: var(--nav-bg) !important;
+    	border-radius: 10px !important;
+    	border-top: none !important;
+    }
+    .help-block {
+    	color: var(--font-color-darker) !important;
+    }
     /* 	HIDE ATTACHMENT BUTTON */ 
     .fbswitcher [data-mode="attachment"] {
            display: var(--attach-file-button) !important;
