@@ -740,7 +740,7 @@
 				padding-right: 10px  !important;
 			}
   .media hr, aside hr, section hr {
-    border-color: var(--nav-bg);
+    border-color: var(--nav-bg) !important;
   }
        /* keep mentions and tags from spilling out */
        #profile-page .label,
