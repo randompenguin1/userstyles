@@ -905,6 +905,7 @@ aside .widget,
 }
 	.wall-item-comment-wrapper {
 		border: none !important;
+		box-shadow: none !important;
 	}
 		.photo-comment-wrapper .btn-sm,
 		#profile-jot-wrapper .btn-sm,
