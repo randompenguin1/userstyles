@@ -118,6 +118,7 @@ Just because it looks right or works in your preferred browser or device doesn't
 * Unstyled Comment button on other people's profiles [Issue #7]
 * Hide horizontal rules for cleaner look
 * Minor style fixes for .panel-body and .help-block
+* Removed box-shadow from .wall-item-comment-wrapper
 
 1.4 (12 Feb 2025)
 * Limited textarea resize fix to settings pages
