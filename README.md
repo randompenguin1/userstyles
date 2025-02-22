@@ -121,6 +121,7 @@ Just because it looks right or works in your preferred browser or device doesn't
 * Removed box-shadow from .wall-item-comment-wrapper
 * Fixed Settings > Channels Panel padding and Submit button alignment
 * Redesigned Calculator Add-On [Issue #8]
+* Fixed photo album thumbnail size for mobile [Issue #10]
 
 1.4 (12 Feb 2025)
 * Limited textarea resize fix to settings pages
