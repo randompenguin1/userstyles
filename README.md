@@ -108,6 +108,7 @@ In some places fallbacks are included to accommodate older browsers or mobile de
 Just because it looks right or works in your preferred browser or device doesn't mean it will work for everyone. **Try to thoroughly *test* your edits** in desktop and mobile Chromium-based, Mozilla-based, and Webkit-based browsers before submitting a pull-request.
 
 ## CHANGELOG:
+1.5 (27 Feb 2025)
 * fixed browser "Share to.." button display and sizing [Issue #3]
 * fixed wrong sized menu items in action button drop-downs on mobile [related to Issue #3]
 * Styled content filter buttons coming from other platforms.
@@ -122,6 +123,13 @@ Just because it looks right or works in your preferred browser or device doesn't
 * Fixed Settings > Channels Panel padding and Submit button alignment
 * Redesigned Calculator Add-On [Issue #8]
 * Fixed photo album thumbnail size for mobile [Issue #10]
+* Fixed context of .panel-body, was only intended only for Settings page
+* New Mobile Profiles [Issue #11]
+* Added camera icon to user's Recent Photos because no profile photo is shown on it.
+* Adjusted mobile drop-down button appearance and position
+* Made ul.nav-tabs appearance consistent with secondary toolbar tabs 
+* Made ul.nav-tabs turn into buttons on narrow mobile screens
+* Box shadow on Compose formatting buttons removed from dark version 
 
 1.4 (12 Feb 2025)
 * Limited textarea resize fix to settings pages
