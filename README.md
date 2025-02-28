@@ -1,5 +1,5 @@
 # Bookface User Styles for Friendica
-Version: 1.4
+Version: 1.5
 
 If the Friendica server you are on does not offer the Bookface theme modifications you can apply them in your browser. You can only use either the Light or Dark version.
 
