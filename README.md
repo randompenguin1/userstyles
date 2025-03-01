@@ -1,5 +1,5 @@
 # Bookface User Styles for Friendica
-Version: 1.5.1
+Version: 1.5.2
 
 If the Friendica server you are on does not offer the Bookface theme modifications you can apply them in your browser. You can only use either the Light or Dark version.
 
@@ -109,6 +109,7 @@ Just because it looks right or works in your preferred browser or device doesn't
 
 ## CHANGELOG:
 * Fixed HR rule in posts [Issue #13]
+* Fixed Post-in-Group/Mention button alignment [Issue #16]
 
 1.5 (27 Feb 2025)
 * fixed browser "Share to.." button display and sizing [Issue #3]
