@@ -1804,8 +1804,11 @@ a.tag.label,
         content: '' !important;
         margin: 0 !important;
     }
+    #mention-link {
+    	padding: 0 8px !important;
+    }
     #mention-link span:last-of-type {
-        margin-right: 42px !important;
+        display: none !important;
     }
     aside {
     	background-color: var(--background-color)  !important;
@@ -2233,7 +2236,6 @@ a.tag.label,
 			#mention-link span:first-of-type {
 				float: none !important;
 				position: relative !important;
-				left: -5px !important;
 				top: 2px !important;
 			}
 			#search-save .fa-plus::after,
