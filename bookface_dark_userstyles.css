@@ -1,6 +1,6 @@
 /*
     Name	 : Bookface Dark
-    Version    : 1.5
+    Version    : 1.5.4
     Licence    : AGPL
     Created on : 27 Feb 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
@@ -34,6 +34,8 @@
     --link-color: #0066ff;	/* match Accent Color here */
     --nav-icon-color: #b0b3b8;
     --background-color: #1c1c1d;
+	--content-bg: var(--nav-bg);
+	--comment-bg: var(--background-color);
     --font-color: #cccccc;
     --font-color-darker: #acacac;
 	--font-color-lighter: #444444;
@@ -499,7 +501,7 @@ header #banner {
 	.tos-content-wrapper, 
 	.fsuggest-content-wrapper,
 	.shared-wrapper {
-		background-color: var(--nav-bg)  !important;
+		background-color: var(--content-bg)  !important;
 		background-image: none !important;
 		border-color: #333 !important;
 	}
@@ -710,7 +712,7 @@ aside .widget,
 	}
 /* POSTS */
 .tread-wrapper {
-	background-color: rgb(37, 39, 40)  !important;
+	background-color: var(--content-bg) !important;
 	box-shadow: 0 0px 1px rgba(0,0,0,.5)  !important;
 	border-radius: 10px  !important;
 }
@@ -718,7 +720,7 @@ aside .widget,
 	border-top: none !important;
 }
 .wall-item-container .media {
-       background-color: rgb(37, 39, 40)  !important;
+       background-color: var(--content-bg) !important;
        border-radius: 10px  !important;
 }
 	.wall-item-container iframe {
@@ -931,7 +933,7 @@ aside .widget,
 .modal-content,
 #jot-modal-content,
 .wall-item-comment-wrapper {
-	background-color: rgb(37,39,40)  !important;
+	background-color: var(--content-bg) !important;
     border-radius: 15px  !important;
     background-image: none !important;
 }
@@ -1145,7 +1147,7 @@ aside .widget li:hover {
 }
 .comment-fake-form textarea {
     border-radius: 50px  !important;
-    background-color: rgb(51, 51, 52)  !important;
+    background-color: var(--comment-bg) !important;
     -webkit-box-shadow: none  !important;
     box-shadow: none  !important;
 }    
@@ -1161,7 +1163,7 @@ aside .widget li:hover {
        }
        .comment .media-body {
               padding: 10px !important;
-              background-color: var(--background-color) !important;
+              background-color: var(--comment-bg) !important;
               border-radius: 20px !important;
        }
        .wall-item-actions-row .wall-item-emoji {
