@@ -157,6 +157,10 @@
 		content: '\f0f3' !important;	
 		color: var(--link-color) !important;	
 	}
+	.notif-item img.notif-image,
+	.intro-photo-wrapper img.intro-photo {
+		border-radius: 100%;
+	}
 ul.nav-tabs {
 	display: flex !important;
 	flex-wrap: wrap !important;
