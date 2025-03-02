@@ -67,6 +67,8 @@ For your convenience all of the colors and pseudo-element labels are defined in 
     --link-color: #0066ff;  /* match Accent Color here */
     --nav-icon-color: #65686C;
     --background-color: #f2f4f7;
+    --content-bg: var(--nav-gb);
+    --comment-bg: var(--background-color);
     --font-color: #313131;
     --font-color-darker: #333333;
     --menu-background-hover-color: color-mix(in oklab, var(--link-color) 15%, white);
