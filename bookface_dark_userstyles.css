@@ -1,6 +1,6 @@
 /*
     Name	 : Bookface Dark
-    Version    : 1.5.7
+    Version    : 1.5.8
     Licence    : AGPL
     Created on : 27 Feb 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
@@ -929,6 +929,10 @@ aside .widget,
 	.close:hover,
 	.close:focus {
 		  box-shadow: inset rgba(255,255,255,.2)  !important;
+	}
+	#profile-photo-upload-close {
+		text-align: center !important;
+		padding-top: 10px !important;
 	}
 .modal-content,
 #jot-modal-content,
