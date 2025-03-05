@@ -1,6 +1,6 @@
 /*
     Name	 : Bookface Dark
-    Version    : 1.5.6
+    Version    : 1.5.7
     Licence    : AGPL
     Created on : 27 Feb 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
@@ -1721,6 +1721,26 @@ a.tag.label,
 			position: relative !important;
 			top: 5px !important;
 		}
+	/* Contact Notification Action Buttons */
+	.intro-wrapper button.intro-action-link, 
+	.intro-wrapper button.intro-action-link:hover {
+		height: 50px !important;
+		width:  50px !important;
+		color:  limegreen !important;
+		border: 1px solid limegreen !important;
+		border-radius: 8px !important;
+	}
+	.intro-form {
+		margin-left: 8px !important;
+	}
+	.intro-form button.intro-submit-ignore,
+	.intro-form button.intro-submit-ignore:hover,
+	.intro-form button.intgro-submi-ignore:focus,
+	.intro-form button.intro-submit-discard,
+	.intro-form button.intro-submit-discard:hover,
+	.intro-form button.intro-submit-discard:focus {
+		color: black !important;
+	}
 /*	Greater than Full-HD Width
 	===========================
 */
@@ -1746,12 +1766,17 @@ a.tag.label,
 	}
 }
 /* Frio breakpoints for smaller profile pic */
-	@media screen and (min-width:991px) and (max-width:1199px){
-		.contact-block-img {
-			height: 75px !important;
-			width: 75px !important;
-		}
+@media screen and (min-width:991px) and (max-width:1199px){
+	.contact-block-img {
+		height: 75px !important;
+		width: 75px !important;
 	}
+	/* Contact Notification Action Buttons */
+	.intro-actions {
+		position: relative !important;
+		float: none !important;
+	}
+}
 /*	Large Tablets in Portrait Orientation
 	=====================================
 */
@@ -2338,7 +2363,12 @@ a.tag.label,
 	.justified-gallery > figure{
     	height: 25vw !important;
     	width:  25vw !important;
-	}					
+	}	
+	/* Contact Notification Action Buttons */
+	.intro-actions {
+		position: relative !important;
+		float: none !important;
+	}				
 }
 /*	Frio Theme Cut-Off (double sidebar width)
 	=========================================
