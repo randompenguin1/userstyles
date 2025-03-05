@@ -1,5 +1,5 @@
 # Bookface User Styles for Friendica
-Version: 1.5.7
+Version: 1.5.8
 
 If the Friendica server you are on does not offer the Bookface theme modifications you can apply them in your browser. You can only use either the Light or Dark version.
 
@@ -118,6 +118,7 @@ Just because it looks right or works in your preferred browser or device doesn't
 * Fixed double underline on Compose active tabs [Issue #17]
 * Fixed double Compose tabs issue on mobile [Issue #18]
 * Fixed Accept Contact button [Issue #19]
+* Fixed misaligned close button [Issue #20]
 
 1.5 (27 Feb 2025)
 * fixed browser "Share to.." button display and sizing [Issue #3]
