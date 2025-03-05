@@ -1,6 +1,6 @@
 /*
 	Name	   : Bookface Light User Styles
-	Version    : 1.5.7
+	Version    : 1.5.8
     Licence    : AGPL
     Created on : 27 Feb 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
@@ -929,6 +929,10 @@ ul.nav-tabs {
 	.close:hover,
 	.close:focus {
 		  box-shadow: inset rgba(0,0,0,.2)  !important;
+	}
+	#profile-photo-upload-close {
+		text-align: center !important;
+		padding-top: 10px !important;
 	}
 	.modal-content,
 	#jot-modal-content,
