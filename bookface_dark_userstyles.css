@@ -1,6 +1,6 @@
 /*
     Name	 : Bookface Dark
-    Version    : 1.5.10
+    Version    : 1.5.11
     Licence    : AGPL
     Created on : 08 Mar 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
@@ -1737,7 +1737,7 @@ a.tag.label,
 		width:  50px !important;
 		color:  limegreen !important;
 		border: 1px solid limegreen !important;
-		border-radius: 8px !important;
+		border-radius: 100% !important;
 	}
 	.intro-form {
 		margin-left: 8px !important;
@@ -1748,7 +1748,8 @@ a.tag.label,
 	.intro-form button.intro-submit-discard,
 	.intro-form button.intro-submit-discard:hover,
 	.intro-form button.intro-submit-discard:focus {
-		color: black !important;
+		color: white !important;
+		border: none !important;
 	}
 /*	Greater than Full-HD Width
 	===========================
