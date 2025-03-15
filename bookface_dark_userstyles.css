@@ -1,6 +1,6 @@
 /*
     Name	 : Bookface Dark
-    Version    : 1.5.15
+    Version    : 1.5.16
     Licence    : AGPL
     Created on : 10 Mar 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
@@ -1124,7 +1124,8 @@ aside .vcard .p-addr {
 	aside .vcard .about,
 	aside .vcard .xmpp,
 	aside .vcard .matrix,
-	aside .vcard .homepage {
+	aside .vcard .homepage,
+	aside .vcard .account-type {
 		background-color: var(--background-color) !important;
 		padding: 5px !important;
 		border-radius: 8px !important;
