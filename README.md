@@ -1,5 +1,5 @@
 # Bookface User Styles for Friendica
-Version: 1.5.16
+Version: 1.5.17
 
 If the Friendica server you are on does not offer the Bookface theme modifications you can apply them in your browser. You can only use either the Light or Dark version.
 
@@ -126,6 +126,7 @@ Just because it looks right or works in your preferred browser or device doesn't
 * Additional fix for "Post in Group" button label spacing [Issue #16]
 * Made Delegation/Account Switch Profile Photos round.
 * Styled profile account type box.
+* Fixed mobile spacing issue on Contacts and Scheduled Posts pages 
 
 1.5 (27 Feb 2025)
 * fixed browser "Share to.." button display and sizing [Issue #3]
