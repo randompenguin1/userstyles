@@ -1,8 +1,8 @@
 /*
 	Name	   : Bookface Light User Styles
-	Version    : 1.5.16
+	Version    : 1.5.17
     Licence    : AGPL
-    Created on : 10 Mar 2025
+    Created on : 19 Mar 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
     
 	This "user styles" stylesheet will override Friendica and style it more like Facebook.
@@ -1911,6 +1911,41 @@ body.mod-settings #delegation .contact-block-img {
 			body.mod-profile .vcard + #sidebar-photos-albums::before {
 				content: '' !important;
 			}
+		/* only seen on your own Contacts Page */
+		@supports not selector(:has(*)){
+			body.mod-contact #peoplefind-sidebar::before {
+				content: '\f0c0' !important;
+				font-family: ForkAwesome !important;
+				font-size: 150px !important;
+				position: fixed !important;
+				top: 175px !important;
+				left: 0 !important;
+				right: 0 !important;
+				text-align: center !important;
+				color: var(--nav-icon-color) !important;
+				opacity: .5 !important;
+				z-index: -1 !important;
+				transition-duration: .5s !important;
+				transition-property: left !important;
+			}
+				body.mod-contact aside.canvas-sliding #peoplefind-sidebar::before,
+				body.mod-contact aside.canvas-slid #peoplefind-sidebar::before {
+					left: 50% !important;
+				}
+		}
+		@supports selector(:has(*)){
+			body.mod-contact aside:has(#peoplefind-sidebar) + #content {
+				margin-top: 0 !important;
+			}
+			/* Fix Scheduled Posts Page spacing 
+				Note: aside not :empty because of whitespace,
+				:blank works but is poorly supported,
+				:not(has(*)) works but not in old browsers
+			*/
+			body.mod-profile aside:not(:has(*)) + #content {
+				margin-top: 0 !important;
+			}
+		}
 	body.mod-contact .row:has(.coverphoto) aside,
 	body.mod-photos  .row:has(.coverphoto) aside,
 	body.mod-profile .row:has(.coverphoto) aside,
