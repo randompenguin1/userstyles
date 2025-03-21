@@ -1,8 +1,8 @@
 /*
     Name	 : Bookface Dark
-    Version    : 1.5.17
+    Version    : 1.5.18
     Licence    : AGPL
-    Created on : 19 Mar 2025
+    Created on : 20 Mar 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
 
    This "user styles" stylesheet will override Friendica and style it more like Facebook.
@@ -222,6 +222,14 @@ ul.tabs li {
 			.dropdown-menu > li > a:focus {
 				background-image: none !important;
 				border-radius: 8px !important;
+			}
+            .dropdown-menu li a, 
+            .dropdown-menu li .btn-link {
+            	color: var(--font-color) !important;
+            }
+            .dropdown-menu > li > a.btn-link:hover,
+			.dropdown-menu > li > a.btn-link:focus {
+				color: #333 !important;
 			}
 			.dropdown-menu > li.active,
 			.dropdown-menu > li.active:hover,
