@@ -229,7 +229,7 @@ ul.tabs li {
             }
             .dropdown-menu > li > a.btn-link:hover,
 			.dropdown-menu > li > a.btn-link:focus {
-				color: #333 !important;
+				color: inherit !important;
 			}
 			.dropdown-menu > li.active,
 			.dropdown-menu > li.active:hover,
