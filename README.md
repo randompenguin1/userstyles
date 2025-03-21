@@ -1,5 +1,5 @@
 # Bookface User Styles for Friendica
-Version: 1.5.18
+Version: 1.5.19
 
 If the Friendica server you are on does not offer the Bookface theme modifications you can apply them in your browser. You can only use either the Light or Dark version.
 
@@ -128,6 +128,7 @@ Just because it looks right or works in your preferred browser or device doesn't
 * Styled profile account type box.
 * Fixed mobile spacing issue on Contacts and Scheduled Posts pages 
 * Fixed "More..." dropdown menu rollover text color for Dark Mode 
+* Fixed little vcard text color 
 
 1.5 (27 Feb 2025)
 * fixed browser "Share to.." button display and sizing [Issue #3]
