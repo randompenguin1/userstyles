@@ -1,8 +1,8 @@
 /*
 	Name	   : Bookface Light User Styles
-	Version    : 1.5.23
+	Version    : 1.5.24
     Licence    : AGPL
-    Created on : 23 Mar 2025
+    Created on : 24 Mar 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
     
 	This "user styles" stylesheet will override Friendica and style it more like Facebook.
@@ -1871,6 +1871,13 @@ body.mod-settings #delegation .contact-block-img {
 		padding: 50px 30px;
 		box-sizing: border-box;
 	}
+		[class^="postbox-"] a {
+			color: inherit !important;
+		}
+			[class^="postbox-"]:hover a,
+			[class^="postbox-"]:focus a {
+				text-decoration: underline !important;
+			}
 		/* Solid Color Backgrounds */
 		.postbox-black {
 			background-color: black;
