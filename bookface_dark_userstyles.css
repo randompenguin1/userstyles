@@ -1876,7 +1876,7 @@ body.mod-settings #delegation .contact-block-img {
 		}
 			[class^="postbox-"]:hover a,
 			[class^="postbox-"]:focus a {
-				text-decoration: underline;
+				text-decoration: underline !important;
 			}
 		/* Solid Color Backgrounds */
 		.postbox-black {
