@@ -1,8 +1,8 @@
 /*
     Name	 : Bookface Dark
-    Version    : 1.5.24
+    Version    : 1.6
     Licence    : AGPL
-    Created on : 24 Mar 2025
+    Created on : 25 Mar 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
 
    This "user styles" stylesheet will override Friendica and style it more like Facebook.
@@ -1149,6 +1149,9 @@ aside .widget li.selected {
 aside .widget li.selected a {
     font-weight: bold !important;
 }
+		aside .widget li.selected a:hover {
+			color: #333 !important;
+		}
 aside .widget li:hover {
     background-color:rgba(128,128,128,.2)  !important;
     border-color: transparent  !important;
@@ -1547,12 +1550,12 @@ aside .widget li:hover {
 		}
 	#smileybutton {
 		position: fixed !important;
-		background-color: #fff !important;
+		background-color: var(--background-color) !important;
 		width: auto !imporrtant;
 		border-radius: 8px !important;
 		padding: 10px !important;
-		-webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175) !important;
-		box-shadow: 0 6px 12px rgba(0,0,0,.175) !important;
+		-webkit-box-shadow: 0 6px 12px rgba(255,255,255,.175) !important;
+		box-shadow: 0 6px 12px rgba(255,255,255,.175) !important;
 	}
 		table.smiley-preview {
 			border: none !important;
@@ -1566,6 +1569,13 @@ aside .widget li:hover {
 		width: 32px !important;
 		height: 32px !important;
 	}
+		#postboxbutton {
+			background-color: var(--background-color) !important;
+			box-shadow: 0 6px 12px rgba(255,255,255,.175) !important;
+		}
+		div.preview-postbox > button {
+			border: 1px solid #444 !important;
+		}
 /* MISCELLANEOUS STUFF */
 div#back-to-top {
 	bottom: 65px !important;
