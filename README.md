@@ -1,5 +1,5 @@
 # Bookface User Styles for Friendica
-Version: 1.5.24
+Version: 1.6
 
 If the Friendica server you are on does not offer the Bookface theme modifications you can apply them in your browser. You can only use either the Light or Dark version.
 
@@ -95,6 +95,138 @@ For your convenience all of the colors and pseudo-element labels are defined in 
     --follow-button-text: 'Follow';
     --save-button-text: 'Save';
 
+### COVER PHOTOS
+
+From Bookface 1.3 it supports adding a "Cover Photo" to profiles. There are two places you can add the Cover Photo, depending on whether you want it used on all of your profile section pages or if you want it to appear on ONLY your actual profile page.
+
+Note that this feature ONLY works is recent, modern browsers!  Every *current* and *supported* desktop and mobile version should be able to show it, but nothing *unsupoorted* nor released before 2022 will (see caniuse.com entry for "has()" for specific verssions).
+
+#### ON ALL PROFILE PAGES
+
+1. Go to _Settings > Profile > Personal_
+
+2. In the "Description" box add something like:
+
+`[class=coverphoto][img=https://friendica.server/photo/1649cc674810612350.png]Cover photo description alt-text here[/img][/class]`
+
+3. Submit your changes.
+
+For people who are not using the Bookface scheme they will simply see a thumbnail of your Cover Photo in the sidebar with your Profile Description. For people who ARE using the Bookface scheme they will see your Cover Photo on your Profile, Conversations, etc. pages that have a sidebar.
+
+#### ON JUST YOUR PROFILE PAGE
+
+1. Go to _Settings > Profile > Custom Profile Fields_
+
+2. Enter nothing in the "Label" field.
+
+3. Enter something like this in the "Value" field:
+
+`[class=coverphoto][img=https://friendica.server/photo/1649cc674810612350.png]Cover photo description alt-text here[/img][/class]`
+
+4. Check the Permissions for the field. If for some reason you only want people in certain Circles to see your Cover Photo you can set that here.
+
+5. Submit your changes.
+
+People who are not using the Bookface scheme will see a thumbnail of your Cover Photo in your Profile details. The Cover Photo will only appear on your Profile page.
+
+#### Multiple Cover Photos
+
+Technically you can have one Cover Photo for our actual Profile page by putting it in a Custom Field and another one in the Profile Description that will be shown on the other profile pages.  But if you want to get really creative you can also have multiple images per Cover Photo.
+
+While not really recommended you can place up to four images in the Cover Photo container and Bookface will show them as a collage of stripes.  For example:
+
+`[class=coverphoto][img=https://friendica.server/photo/1649cc674810612350.png]Cover photo 1 description alt-text here[/img][img=https://friendica.server/photo/1649cc677034958382350.png]Cover photo 2 description alt-text here[/img][img=https://friendica.server/photo/1649c038920505603674810612350.png]Cover photo 3 description alt-text here[/img][img=https://friendica.server/photo/3464771649cc674810612350.png]Cover photo 4 description alt-text here[/img][/class]`
+
+Extras spaces are okay, but just make sure there are no carriage returns or other elements inside `[class]..[/class]` or it will mis-count the images and size them wrong. Also keep in mind people not using Bookface will see three thumbnail images on your profile, only Bookface users will see the striped collage.
+
+### POSTBOXES
+
+Starting with Bookface version 1.6 now Friendica will have Postboxes too! Styling similar to the Facebook solid color and gradient backgrounds have been added to the Bookface stylesheets.
+
+**Right now Postbox is exclusively available for people using the Bookface scheme in the Friendica webapp, either on desktop or mobile.**
+
+When a Postbox post is shared to another platform like Mastodon, Sharkey, Disapora, Hubzilla, etc., the Postbox styling does not go with it. The same is true for anyone viewing the post in a third-party app, because none of them support Postbox styling, at least not yet.
+
+There are two Friendica add-ons server administrators can install to add global support for Postbox styling. The "[Postbox](https://gitlab.com/randompenguin/postbox)" add-on simply adds a stylesheet to the `<head>` element. It provides no interface for creating Postboxes, but users can still create them manually with BBcode. The other is the "[Zen Postbox](https://gitlab.com/randompenguin/zen_postbox)" add-on which not only adds the stylesheet to the `<head>` it also adds a Jot Plugin button to the message composer with a menu of all the available Postbox styles.
+
+#### How to Use Postboxes
+
+To make use of a Friendica Postbox simply wrap the text inside a Postbox Class BBcode like this:
+
+`[class=postbox-red]This is the wrapped text[/class]`
+
+#### Available Color Options
+
+In the `[class]` opener add `postbox-` plus any one of the color names after the "=" sign.
+
+**Solid Color Backgrounds:**
+
+- postbox-black
+- postbox-red
+- postbox-green
+- postbox-blue
+- postbox-orange
+- postbox-purple
+- postbox-forest
+- postbox-ocean
+- postbox-pink
+- postbox-salmon
+
+
+**Gradient Backgrounds:**
+
+- postbox-darkgray
+- postbox-minty
+- postbox-mintgray
+- postbox-redblue
+- postbox-violets
+- postbox-grayblack
+- postbox-tealblue
+- postbox-greengray
+- postbox-tealgray
+- postbox-bluegray
+- postbox-lavendergray
+- postbox-sunset
+- postbox-sherbert
+
+#### Content Restrictions
+
+Friendica's Postbox is a bit more forgiving as it allows for more than text-only content. However it does not work with most of the Friendica formatting due to the way BBcode is parsed.
+
+**BBcodes you CANNOT put inside a Postbox:**
+
+- [class], which means you can’t nest Postboxes
+- [hr]
+- [h1],[h2],[h3], etc…
+- [table],[tr],[th],[td]
+- [list],[ul],[ol]
+- [quote]
+- [abstract]
+- [spoiler]
+- [map]
+- [code]
+
+**BBcodes that do not work as intended inside a Postbox:**
+
+- [pre]
+- [noparse]
+- [nobb]
+
+The text will show but will be styled and centered.
+
+**BBcodes that DO WORK inside a Postbox:**
+
+- [b], [i], [u], [o], [s] _(bold has no visible effect)_
+- [url]
+- [img]
+- [audio]
+- [video]
+
+Plus any plain text, including emoji
+
+If you are using Markdown formatting what you can and can’t put in a Postbox is similar, with the exception that (because of how Markdown is parsed into BBcode) you can’t have both a URL and an image in the same Postbox. You can however put inline code in a Postbox with Markdown where BBcode cannot.
+
+
 ## GENERAL NOTES
 
 There is no "Auto" version of the user content stylesheets because there is no way to automatically switch the underlying Frio scheme from "Light" to "Dark/Black" to match the user's preferred color scheme as set on their operating system.
@@ -110,6 +242,7 @@ In some places fallbacks are included to accommodate older browsers or mobile de
 Just because it looks right or works in your preferred browser or device doesn't mean it will work for everyone. **Try to thoroughly *test* your edits** in desktop and mobile Chromium-based, Mozilla-based, and Webkit-based browsers before submitting a pull-request.
 
 ## CHANGELOG:
+1.5 (25 Mar 2025)
 * Fixed HR rule in posts [Issue #13]
 * Fixed notification profile pics so they are round [Issue #14]
 * Fixed Post and Comment background colors [Issue #15]
