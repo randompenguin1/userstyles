@@ -1,8 +1,8 @@
 /*
 	Name	   : Bookface Light User Styles
-	Version    : 1.5.24
+	Version    : 1.6
     Licence    : AGPL
-    Created on : 24 Mar 2025
+    Created on : 25 Mar 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
     
 	This "user styles" stylesheet will override Friendica and style it more like Facebook.
@@ -1149,6 +1149,9 @@ ul.nav-tabs {
 	aside .widget li.selected a {
 		font-weight: bold !important;
 	}
+		aside .widget li.selected a:hover {
+			color: #333 !important;
+		}
 	aside .widget li:hover {
 		background-color:rgba(255,255,255,1)  !important;
 		border-color: transparent  !important;
@@ -1566,6 +1569,13 @@ ul.nav-tabs {
 		width: 32px !important;
 		height: 32px !important;
 	}
+		/*		
+			BOOKFACE
+			DARK MODE
+			HAS ADDITIONAL
+			STYLING
+			HERE
+		*/
 /* MISCELLANEOUS STUFF */
 div#back-to-top {
 	bottom: 65px !important;
