@@ -94,6 +94,7 @@ For your convenience all of the colors and pseudo-element labels are defined in 
     --add-photo-button-text: 'Add Photos';
     --follow-button-text: 'Follow';
     --save-button-text: 'Save';
+    --new-message-text: 'New Message';
 
 ### COVER PHOTOS
 
