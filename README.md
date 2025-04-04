@@ -1,5 +1,5 @@
 # Bookface User Styles for Friendica
-Version: 1.6.1
+Version: 1.6.2
 
 If the Friendica server you are on does not offer the Bookface theme modifications you can apply them in your browser. You can only use either the Light or Dark version.
 
@@ -244,6 +244,7 @@ Just because it looks right or works in your preferred browser or device doesn't
 
 ## CHANGELOG:
 * Fixed "New Message" button not being very obvious [Issue #24]
+* Fixed Profile Pics and Cover Photos not working in old iOS browsers [Issue #26]
 
 1.5 (25 Mar 2025)
 * Fixed HR rule in posts [Issue #13]
