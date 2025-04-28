@@ -160,35 +160,88 @@ To make use of a Friendica Postbox simply wrap the text inside a Postbox Class B
 
 In the `[class]` opener add `postbox-` plus any one of the color names after the "=" sign.
 
+Old names are in parenthesis next to the new names to which they've been mapped.
+
 **Solid Color Backgrounds:**
 
-- postbox-black
-- postbox-red
-- postbox-green
-- postbox-blue
-- postbox-orange
-- postbox-purple
-- postbox-forest
-- postbox-ocean
-- postbox-pink
-- postbox-salmon
+- .postbox-black
+- .postbox-cornflowerblue (.postbox-blue)
+- .postbox-darkblue (.postbox-ocean)
+- .postbox-darkgray
+- .postbox-darkorange (.postbox-orange)
+- .postbox-darkred
+- .postbox-darkslateblue
+- .postbox-forestgreen (.postbox-forest)
+- .postbox-gold
+- .postbox-goldenrod
+- .postbox-honeydew
+- .postbox-hotpink
+- .postbox-lavender
+- .postbox-lightpink
+- .postbox-lightyellow
+- .postbox-limegreen (.postbox-green)
+- .postbox-lightsalmon (.postbox-salmon)
+- .postbox-mediumaquamarine
+- .postbox-mediumslateblue
+- .postbox-mediumvioletred
+- .postbox-mintcream
+- .postbox-olivedrab
+- .postbox-palegreen
+- .postbox-peachpuff
+- .postbox-pink
+- .postbox-purple
+- .postbox-red
+- .postbox-seagreen
+- .postbox-sienna
+- .postbox-skyblue
+- .postbox-thistle
+- .postbox-violet
+- .postbox-whitesmoke
+- .postbox-yellowgreen
 
 
 **Gradient Backgrounds:**
 
-- postbox-darkgray
-- postbox-minty
-- postbox-mintgray
-- postbox-redblue
-- postbox-violets
-- postbox-grayblack
-- postbox-tealblue
-- postbox-greengray
-- postbox-tealgray
-- postbox-bluegray
-- postbox-lavendergray
-- postbox-sunset
-- postbox-sherbert
+- .postbox-aurora
+- .postbox-bluegray
+- .postbox-graygrey (.postbox-darkgray)
+- .postbox-grayblack
+- .postbox-greengray
+- .postbox-lavendergray
+- .postbox-minty
+- .postbox-mintgray
+- .postbox-rainbow
+- .postbox-redblue
+- .postbox-sherbet (.postbox-sherbert)
+- .postbox-spectrum
+- .postbox-strawberrycream
+- .postbox-sunset
+- .postbox-tealblue
+- .postbox-tealgray
+- .postbox-violets
+- .postbox-violetblue
+
+**Pattern Backgrounds:**
+
+- .postbox-blueprint
+- .postbox-birds
+- .postbox-checkered
+- .postbox-cubes
+- .postbox-lemonlime
+- .postbox-gingham
+- .postbox-grid
+- .postbox-hearts
+- .postbox-honeycomb
+- .postbox-notebook
+- .postbox-plaid
+- .postbox-polkadots
+- .postbox-shadedots
+- .postbox-shadowbox
+- .postbox-stars
+- .postbox-warpgrid
+- .postbox-wavy
+
+(There are also some _Animated Backgrounds_ but they are only available if either the "Postbox" or "Zen Postbox" add-on is installed and activated on the server)
 
 #### Content Restrictions
 
@@ -249,7 +302,7 @@ Just because it looks right or works in your preferred browser or device doesn't
 * Minified Postbox CSS
 * Added Postbox v1.1 styles
 
-1.5 (25 Mar 2025)
+1.6 (25 Mar 2025)
 * Fixed HR rule in posts [Issue #13]
 * Fixed notification profile pics so they are round [Issue #14]
 * Fixed Post and Comment background colors [Issue #15]
