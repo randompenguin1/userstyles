@@ -1,6 +1,6 @@
 /*
     Name	 : Bookface Dark
-    Version    : 1.6.5
+    Version    : 1.6.6
     Licence    : AGPL
     Created on : 28 APR 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
@@ -885,14 +885,14 @@ aside .widget,
             left: 15px !important;
         }
         .vote-event .wall-item-response:nth-of-type(1) .button-event::after,
-        [id^="attendyes"]::after{
+        .wall-item-actions-row [id^="attendyes"]::after{
             content: var(--attendyes-button-text) !important;
         }
         .vote-event:has(button) .wall-item-response:nth-of-type(2){
             left: 105px !important;
         }
         .vote-event .wall-item-response:nth-of-type(2) .button-event::after,
-        [id^="attendno"]::after{
+        .wall-item-actions-row [id^="attendno"]::after{
             content: var(--attendno-button-text) !important;
             position: relative !important;
             height: 20px !important;
@@ -902,7 +902,7 @@ aside .widget,
             left: 204px !important;
         }
         .vote-event .wall-item-response:nth-of-type(3) .button-event::after,
-        [id^="attendmaybe"]::after{
+        .wall-item-actions-row [id^="attendmaybe"]::after{
             content: var(--attendmaybe-button-text) !important;
         }
 		/* prevent "Like Like" and "Dislike Dislike" on photos */
@@ -1193,6 +1193,88 @@ aside .widget li:hover {
        .wall-item-actions .checkbox {
               padding-top: 6px  !important;
        }
+			/* WALL ITEM RESPONSES */
+			.wall-item-responses > div {
+				position: relative !important;
+			}
+			.wall-item-responses > div > p:first-of-type::before,
+			.hide-comments::before, .hide-comments-total::before {
+				display: inline-block !important;
+				margin-right: 3px !important;
+				font-family: ForkAwesome !important;
+				font-weight: lighter !important;
+				font-size: 12px !important;
+				text-align: center !important;
+				color: white !important;
+				width: 20px !important;
+				height:20px !important;
+				padding: 2px !important;
+				line-height: 16px !important;
+				border-radius: 100% !important;
+			}
+				.wall-item-responses .wall-item-like > p:first-of-type::before {
+					content: '\f164' !important;
+					background-color: #0066FF !important;
+				}
+				.wall-item-responses .wall-item-dislike > p:first-of-type::before {
+					content: '\f165' !important;
+					background-color: red !important;
+				}
+				.wall-item-responses .wall-item-announce > p:first-of-type::before{
+					content: '\f079' !important;
+					background-color: #00c100 !important;
+				}
+				.wall-item-responses .wall-item-attendyes > p:first-of-type::before{
+					content: '\f00c' !important;
+					background-color: #00c100 !important;
+				}
+				.wall-item-responses .wall-item-attendno > p:first-of-type::before{
+					content: '\f00d' !important;
+					background-color: red !important;
+				}
+				.wall-item-responses .wall-item-attendmaybe > p:first-of-type::before{
+					content: '\f128' !important;
+					background-color: orange !important;
+				}
+					.wall-item-responses div p[class*="-expanded"] {
+						background-color: rgba(0,0,0,.8) !important;
+						position: absolute !important;
+						bottom: 100% !important;
+						padding: 10px !important;
+						margin-left: 23px !important;
+						border-radius: 8px !important;
+						width: 200px !important;
+						max-height: 415px !important;
+						font-size: 0px !important;
+						color: transparent !important;
+						overflow: hidden !important;
+						box-shadow: 0px 5px 5px rgba(0,0,0,.3) !important;
+						z-index: 10 !important;
+					}
+						.wall-item-responses div p[class*="-expanded"]:hover,
+						.wall-item-responses div p[class*="-expanded"]:focus {
+							overflow-y: auto !important;
+						}
+						.wall-item-responses div p[class*="-expanded"] a {
+							color: white !important;
+							display: block !important;
+							max-width: 100% !important;
+							white-space: nowrap !important;
+							text-overflow: ellipsis !important;
+							font-size: 14px !important;
+							overflow: hidden !important;
+						}
+							.wall-item-responses div p[class*="-expanded"] a:nth-of-type(74){
+								overflow: visible !important;
+							}
+								.wall-item-responses div p[class*="-expanded"] a:nth-of-type(74)::after {
+									content: 'and others...';
+									display: block !important;
+								}
+			.hide-comments::before, .hide-comments-total::before {
+				content: '\f27a' !important;
+				background-color: #0066FF !important;
+			}
        .comment .media-body {
               padding: 10px !important;
               background-color: var(--comment-bg) !important;
@@ -2178,6 +2260,9 @@ body.mod-settings #delegation .contact-block-img {
     			display: block !important;
     			background-color: var(--background-color) !important;
     		}
+		.wall-item-responses div p[class*="-expanded"] {
+			overflow-y: auto !important;
+		}
 }
 /*	Most Phones in Portrait Orientation
 	Large Screen Phones in Landscape Orientation
