@@ -1,5 +1,5 @@
 # Bookface User Styles for Friendica
-Version: 1.6.8
+Version: 1.6.9
 
 If the Friendica server you are on does not offer the Bookface theme modifications you can apply them in your browser. You can only use either the Light or Dark version.
 
@@ -304,6 +304,7 @@ Just because it looks right or works in your preferred browser or device doesn't
 * Styled Item Responses (part of Issue #25)
 * Action buttons (except Comment and Quote) you've interacted with before now adopt accent color [Issue #25]
 * Fix for disabled Action Buttons
+* Fixed a breaking typo and repositioned some code to sync stylesheet line numbers.
 
 1.6 (25 Mar 2025)
 * Fixed HR rule in posts [Issue #13]
