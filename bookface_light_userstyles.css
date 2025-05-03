@@ -1,8 +1,8 @@
 /*
 	Name	   : Bookface Light User Styles
-	Version    : 1.6.9
+	Version    : 1.7.0
     Licence    : AGPL
-    Created on : 01 MAY 2025
+    Created on : 03 MAY 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
     
 	This "user styles" stylesheet will override Friendica and style it more like Facebook.
@@ -1271,6 +1271,9 @@ ul.nav-tabs {
 							font-size: 14px !important;
 							overflow: hidden !important;
 						}
+						.toplevel_item:hover .wall-item-container:hover .wall-item-responses div p[class*="-expanded"] a {
+							color: white !important;
+						}
 							.wall-item-responses div p[class*="-expanded"] a:nth-of-type(74){
 								overflow: visible !important;
 							}
@@ -2150,8 +2153,10 @@ body.mod-settings #delegation .contact-block-img {
 				:blank works but is poorly supported,
 				:not(has(*)) works but not in old browsers
 			*/
-			body.mod-profile aside:not(:has(*)) + #content {
-				margin-top: 0 !important;
+			@supports not (background: -webkit-named-image(i)) {
+				body.mod-profile aside:not(:has(*)) + #content {
+					margin-top: 0;
+				}
 			}
 		}
 	body.mod-contact .row:has(.coverphoto) aside,
