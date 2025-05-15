@@ -1,8 +1,8 @@
 /*
     Name	 : Bookface Dark
-    Version    : 1.7.0
+    Version    : 1.7.1
     Licence    : AGPL
-    Created on : 03 MAY 2025
+    Created on : 15 MAY 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
 
    This "user styles" stylesheet will override Friendica and style it more like Facebook.
@@ -1107,6 +1107,9 @@ aside .widget,
     background-color: var(--background-color) !important;
     border-radius: 100%
 }
+	#rfic-desc, #remote-friends-in-common {
+		background-color: var(--content-bg) !important;
+	}
 aside .widget li {
     margin-bottom: 8px !important;
 }
