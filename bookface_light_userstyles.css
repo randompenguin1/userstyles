@@ -648,6 +648,9 @@ ul.nav-tabs {
 			display: block !important;
 			padding-right: 30px !important;
 		}
+	#rfic-desc, #remote-friends-in-common {
+		background-color: var(--content-bg) !important;
+	}
 	#contact-edit-status-wrapper {
 		margin: 15px 0px  !important;
 		border-radius: 10px !important;
