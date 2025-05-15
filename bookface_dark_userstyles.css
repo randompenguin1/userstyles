@@ -648,6 +648,9 @@ header #banner {
 			  display: block !important;
 			  padding-right: 30px !important;
        }
+	#rfic-desc, #remote-friends-in-common {
+		background-color: var(--content-bg) !important;
+	}
 #contact-edit-status-wrapper {
     margin: 15px 0px  !important;
     border-radius: 10px !important;
@@ -1107,9 +1110,6 @@ aside .widget,
     background-color: var(--background-color) !important;
     border-radius: 100%
 }
-	#rfic-desc, #remote-friends-in-common {
-		background-color: var(--content-bg) !important;
-	}
 aside .widget li {
     margin-bottom: 8px !important;
 }
