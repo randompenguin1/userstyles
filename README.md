@@ -1,5 +1,5 @@
 # Bookface User Styles for Friendica
-Version: 1.7.1
+Version: 1.8.0
 
 If the Friendica server you are on does not offer the Bookface theme modifications you can apply them in your browser. You can only use either the Light or Dark version.
 
@@ -62,24 +62,40 @@ _(Note: the Blue Accent Color is actually `#33a2e0`, but is mostly overridden wi
 
 For your convenience all of the colors and pseudo-element labels are defined in CSS variables at the top of the stylesheet:
 
+	/* Fonts and Colors */
     --global-font-family: "Open Sans", Arial, sans-serif, Noto Color Emoji;
-    --nav-bg: #ffffff;
-    --link-color: #0066ff;  /* match Accent Color here */
-    --nav-icon-color: #65686C;
-    --background-color: #f2f4f7;
-    --content-bg: var(--nav-gb);
+    --nav-bg: $nav_bg;
+    --link-color: $link_color;
+    --nav-icon-color: $nav_icon_color;
+    --background-color: $background_color;
+    --content-bg: var(--nav-bg);
     --comment-bg: var(--background-color);
-    --font-color: #313131;
-    --font-color-darker: #333333;
-    --menu-background-hover-color: color-mix(in oklab, var(--link-color) 15%, white);
+    --font-color: $font_color;
+    --font-color-lighter: $font_color_lighter; 
+    --font-color-darker: $font_color_darker;
+    --menu-background-hover-color: $menu_background_hover_color;
     --border-color: #eeeeee;
     --count-color:  #ffffff;
     --count-bg: var(--link-color);
-    --attach-file-button: none; /* none or block */
+    --shadowglow: rgba(0,0,0,.3);	
+    --dimbright:  rgba(0,0,0,.1);	
+    
+    /* Theme Features */
+	--attach-file-button: none; /* none or block */
+	--show-tooltips: block; /* none or block */ 
+	--show-navbar-labels: none; /*none or block */ 
     
     /* LOCALIZE pseudo-element text below */
+    --navbar-network-text: 'Network';
+    --navbar-profile-text: 'Home';
+    --navbar-community-text: 'News Feed';
+    --navbar-messages-text: 'Messages';
+    --navbar-calendar-text: 'Calendar';
+    --navbar-contact-text: 'Friends';
+    --navbar-notices-text: 'Notices';
     --sign-in-text: 'Sign-In';
     --compose-text: 'Compose';
+    --new-note-text: 'New Note';
     --save-search-text: 'Save Search';
     --follow-tag-text: 'Follow Tag';
     --comment-button-text: 'Comment';
@@ -93,8 +109,9 @@ For your convenience all of the colors and pseudo-element labels are defined in 
     --attendmaybe-button-text: 'Maybe';
     --add-photo-button-text: 'Add Photos';
     --follow-button-text: 'Follow';
-    --save-button-text: 'Save';
-    --new-message-text: 'New Message';
+    --save-button-text: 'Save';  
+	--new-message-text: 'New Message';
+	--calendar-today-text: 'Today';  
 
 ### COVER PHOTOS
 
@@ -296,7 +313,39 @@ In some places fallbacks are included to accommodate older browsers or mobile de
 Just because it looks right or works in your preferred browser or device doesn't mean it will work for everyone. **Try to thoroughly *test* your edits** in desktop and mobile Chromium-based, Mozilla-based, and Webkit-based browsers before submitting a pull-request.
 
 ## CHANGELOG:
-* Fixed transparent background on friends-in-common list on other people's profiles
+1.8 (12 July 2025)
+* * All stylesheets now have lighter font color variable.
+* Added customization for drop-shadows and outer glows.
+* Button rollover effects now consistent for different types of buttons.
+* Added customization of color for rollover effect.
+* Added customization to show/hide bootstrap tooltips.
+* Added customization to show/hide main navigation buttons labels and customize each label (Note: navbar labels do not work on tablets in portrait mode, there isn't room for all of them, they do work for phones in portrait because there are fewer buttons shown).
+* Added customization to change Calendar "Today" icon to text label and customize the label.
+* Body now has a default font color.
+* Button-link and anchor-button now adopt link color
+* Muted text now uses lighter font color.
+* Nav Tabs no longer have a border color (but nav tabs list items do)
+* Nav Tab link colors are now consistent.
+* Drop-down menus now all adopt same drop-shadow/outer-glow
+* Drop-down menus now have a max-width. Any overflow text is truncated. This prevents menu from growing so wide it spills off the screen of mobile devices.
+* Forms now use color variables.
+* User Menus now have icons for the first few items (this has been added to the 2025 Release Candidate, but Bookface brings it to Friendica 2024.12 as well).
+* Jot/Compose modal tabs appearance now consistent with second topbar tabs.
+* General containers now use box-shadow instead of border for outline.
+* Common Contacts photos are now round.
+* Light Mode admin page submit buttons styling typo fixed.
+* Profile extra links buttons restyled (were limited to 50% width of aside, text sometimes didn't fit, made those consistent width and stacked).
+* Popover Hovercard styling now consistent between Light and Dark modes
+* Thread font color hover effect fixed.
+* Position of "More" drop-down menu on Event posts with engagement fixed.
+* Modal "Close" button rollover effect fixed.
+* Fixed typo in styling for #profile-jot-wrapper
+* Verified checkmark on Profile URL restyled.
+* Responses restyled to only show counts and reveal popover list of who responded on mouseover/touch.
+* Tag Cloud colors now set by CSS variables.
+* Message Preview media list now styled.
+* Action Button Labels now adopt global font family variable.
+* Fixed Auto selected menu color in light mode
 
 1.7 (06 May 2025)
 * Fixed "New Message" button not being very obvious [Issue #24]
