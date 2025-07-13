@@ -64,16 +64,16 @@ For your convenience all of the colors and pseudo-element labels are defined in 
 
 	/* Fonts and Colors */
     --global-font-family: "Open Sans", Arial, sans-serif, Noto Color Emoji;
-    --nav-bg: $nav_bg;
-    --link-color: $link_color;
-    --nav-icon-color: $nav_icon_color;
-    --background-color: $background_color;
+    --nav-bg: #ffffff;
+    --link-color: #0066ff;
+    --nav-icon-color: #65686c;
+    --background-color: #f2f4f7;
     --content-bg: var(--nav-bg);
     --comment-bg: var(--background-color);
-    --font-color: $font_color;
-    --font-color-lighter: $font_color_lighter; 
-    --font-color-darker: $font_color_darker;
-    --menu-background-hover-color: $menu_background_hover_color;
+    --font-color: #313131;
+    --font-color-lighter: #444444; 
+    --font-color-darker: #333333;
+    --menu-background-hover-color: #cee9f7;
     --border-color: #eeeeee;
     --count-color:  #ffffff;
     --count-bg: var(--link-color);
