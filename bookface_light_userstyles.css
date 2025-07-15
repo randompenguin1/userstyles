@@ -1,6 +1,6 @@
 /*
 	Name	   : Bookface Light User Styles
-	Version    : 1.8.0
+	Version    : 1.8.1
     Licence    : AGPL
     Created on : 12 JULY 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
@@ -179,7 +179,7 @@
 				content: var(--navbar-contact-text);
 			}
 			#topbar-first #nav-notifications-menu-btn::after{
-				content: 'Notices';
+				content: var(--navbar-notices-text);
 				font-size: 12px;
 				text-align: center;
 				position: absolute;
