@@ -1,8 +1,8 @@
 /*
 	Name	   : Bookface Light User Styles
-	Version    : 1.8.1
+	Version    : 1.8.2
     Licence    : AGPL
-    Created on : 12 JULY 2025
+    Created on : 27 AUG 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
     
 	This "user styles" stylesheet will override Friendica and style it more like Facebook.
@@ -1352,13 +1352,13 @@ ul.nav-tabs {
 	aside .vcard #subscribe-feed-link-button,
 	aside .vcard #dfrn-request-link-button,
 	aside .vcard #wallmessage-link-button,
-	aside .vcard #showgroup-button {
+	aside .vcard #show-group-button {
 		width: 75% !important;
 		float: none !important;
 		margin: 0 auto !important;
 		padding: 5px !important;
 	} 
-		aside .vcard #showgroup-button a {
+		aside .vcard #show-group-button a {
 			width: 100% !important;
 		}
 	aside .widget, .nav-container .widget {
