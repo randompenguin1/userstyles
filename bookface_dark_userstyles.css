@@ -1,6 +1,6 @@
 /*
     Name	 : Bookface Dark
-    Version    : 1.8.3
+    Version    : 1.8.5
     Licence    : AGPL
     Created on : 01 NOV 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
@@ -31,7 +31,7 @@
 :root {
 	/* Fonts and Colors */
     --global-font-family: "Open Sans", Arial, sans-serif, Noto Color Emoji;
-     --nav-bg: #252728;
+    --nav-bg: #252728;
     --link-color: #0066ff;	/* match Accent Color here */
     --nav-icon-color: #b0b3b8;
     --background-color: #1c1c1d;
@@ -79,6 +79,7 @@
     --save-button-text: 'Save';  
 	--new-message-text: 'New Message';
 	--calendar-today-text: 'Today';  
+	--community-post-text: 'Community Posts MUST be Public!';
 }
 
 body {
@@ -86,7 +87,14 @@ body {
        font-size: 15px  !important;
        padding-top: 130px  !important;
        font-family: var(--global-font-family) !important;
+       color: var(--font-color) !important;
 }
+	body a {
+		color: var(--font-color) !important;
+	}
+	.tooltip {
+		display: var(--show-tooltips) !important;
+	}
 	.btn-link, a.btn {
 		color: var(--link-color) !important; 
 	}
@@ -587,6 +595,20 @@ header #banner {
               display: inline !important;
               top: -4px !important;
        }
+		/* Enable Posting from Community Page */
+		body.mod-community #jotOpen {
+			display: block !important;
+		}
+			body.mod-community #jot-popup {
+				display: block !important;
+			} 
+			body.mod-community #acl-wrapper::before {
+				content: var(--community-post-text);
+				margin-bottom: 10px;
+			}
+			body.mod-community #acl-wrapper .panel-info {
+				opacity: .2;
+			}
 		body.mod-notes #jotOpen::before {
 			content: var(--new-note-text) !important;
 		}
@@ -635,7 +657,6 @@ header #banner {
 	}
     /* Make Submit Buttons Pretty */
     #adminpage a.btn,
-    .settings-submit,
     button[type="submit"],
     input[type="submit"],
     #photos-upload-submit,
@@ -665,7 +686,7 @@ header #banner {
     #photos-upload-submit:focus,
 	#photo-edit-submit-button:hover,
 	#photo-edit-submit-button:focus{
-        box-shadow: inset 0 0 100px rgba(0,0,0,.1)  !important;
+        box-shadow: inset 0 0 100px var(--dimbright) !important;
     }
     #delegate-parent .submit button {
     	float: right !important;
@@ -779,10 +800,12 @@ header #banner {
 		background-color: var(--link-color) !important; 
 		border-radius: 8px !important; 
 		box-shadow: none !important; 
+		min-height: 36px !important;
+		white-space: wrap !important;
 }
 		#profile-extra-links .btn:hover,
 		#profile-extra-links .btn:focus {
-			box-shadow: inset 0 0 100px rgba(0,0,0,.1) !important;
+			box-shadow: inset 0 0 100px var(--dimbright) !important;
 		} 
 	/* SEARCH RESULTS */
 	#search-save {
@@ -793,7 +816,7 @@ header #banner {
 	}
 		#search-save:hover,
 		#search-save:focus {
-			box-shadow: inset 0 0 100px rgba(0,0,0,.1)  !important;
+			box-shadow: inset 0 0 100px var(--dimbright) !important;
 		}
 	#search-save .fa-plus::before{
 		content: '\f292'  !important;
@@ -836,6 +859,13 @@ header #banner {
   		-moz-box-shadow: 0 10px 100px rgba(255, 255, 255, 0.25) !important;
   		box-shadow: 0 10px 100px rgba(255, 255, 255, 0.25) !important;
 	}
+		.popover.hovercard	.btn.btn-primary {
+			background-color: transparent !important;
+			color: var(--nav-icon-color) !important;
+		}
+			.popover.hovercard .btn.btn-primary:hover {
+				background-color: rgba(128,128,128,.1) !important;
+			}
 	.hover-card-footer {
 		border-color: #333 !important;
 		background-color: var(--nav-bg) !important;
@@ -863,6 +893,60 @@ aside .widget,
 	aside .badge {
 		background-color: var(--link-color) !important;
 	}
+/* 	Contributed by Matthias (feb@loma.ml):
+		Widgets mit einem Icon versehen
+		Gemeinsame Basisregeln für alle Sidebar-Icons */	
+	aside .widget.fakelink h3::before {
+		font-family: "ForkAwesome";
+		margin-right: 8px;
+		font-size: 14px;
+	}
+	
+	/* Individuelle Icons */
+	#circle-sidebar-inflated.fakelink h3::before,
+	#circle-sidebar .fakelink h3::before { content: "\f2bd" !important; } /* user-circle */
+	#saved-search-list-inflated.fakelink h3::before,
+	#saved-search-list .fakelink h3::before { content: "\f002" !important; } /* search */
+	#group-list-sidebar-inflated.fakelink h3::before,
+	#group-list-sidebar .fakelink h3::before { content: "\f0c0" !important; } /* users */
+	#nets-sidebar-inflated.fakelink h3::before,
+	#nets-sidebar .fakelink h3::before { content: "\f233" !important; } /* server */
+	#trending-tags-sidebar-inflated.fakelink h3::before,
+	#trending-tags-sidebar .fakelink h3::before,
+	#tagblock-inflated.fakelink h3::before,
+	#tagblock faklink h3::before { content: "\f02b" !important; } /* tag */
+	#datebrowse-sidebar-inflated.fakelink h3::before,
+	#datebrowse-sidebar .fakelink h3::before { content: "\f187" !important; } /* archive */
+	#file-sidebar-inflated.fakelink h3::before,
+	#file-sidebar .fakelink h3::before { content: "\f07b" !important; } /* folder */
+	#channel-sidebar-inflated.fakelink h3::before,
+	#channel-sidebar .fakelink h3::before { content: "\f009" !important; } /* th-large */
+	#accounttype-sidebar-inflated.fakelink h3::before,
+	#accounttype-sidebar .fakelink h3::before { content: "\f0e9" !important; } /* umbrella */
+	#sidebar-community-no-sharer-inflated.fakelink h3::before,
+	#sidebar-community-no-sharer .fakelink h3::before { content: "\f2c0" !important; } /* user-o */
+	#rel-sidebar-inflated.fakelink h3::before,
+	#rel-sidebar .fakelink h3::before { content: "\f2b5" !important; } /* handshake-o */
+	#category-sidebar-inflated.fakelink h3::before,
+	#category-sidebar .fakelink h3::before { content: "\f00b" !important; } /* th-list */
+
+	aside .widget.inflated.fakelink h3::after {
+		font-family: "ForkAwesome";
+  		content: "\f0d7";
+  		display: inline-block;
+  		float: right;
+	}
+	
+	aside .widget.inflated:hover,
+	aside .widget.inflated:focus,
+	aside .widget.inflated:active,
+	aside .widget.inflated:focus-within {
+		background-color: var(--nav-bg) !important;
+	}
+		aside .widget.inflated h3 {
+			padding-bottom: 0px;
+		}		
+	
 /* POSTS */
 .tread-wrapper {
 	background-color: var(--content-bg) !important;
@@ -921,6 +1005,14 @@ aside .widget,
 }
 	.contact-wrapper .media-body .contact-entry-name h4.media-heading a { 
 		color: var(--link-color) !important;
+	}
+	.contact-wrapper .contact-action-link, 
+	.contact-wrapper .contact-action-link:hover, 
+	.textcomplete-item .contact-wrapper .contact-action-link {
+		color: var(--font-color);
+	}
+	.contact-entry-desc {
+		color: var(--font-color);
 	}
 .hovercard {
        background-color: var(--nav-bg)  !important;
@@ -1116,7 +1208,7 @@ aside .widget,
 	}
 	.close:hover,
 	.close:focus {
-		  box-shadow: inset 0 0 100px rgba(255,255,255,.2)  !important;
+		  box-shadow: inset 0 0 100px var(--dimbright) !important;
 	}
 	#profile-photo-upload-close {
 		text-align: center !important;
@@ -1161,8 +1253,8 @@ aside .widget,
 	background-color: var(--background-color) !important;
 }
 .fbrowser .folders button {
-       background-color: rgba(255,255,255,.5)  !important;
-       color: black  !important;
+       background-color: var(--dimbright) !important;
+       color: var(--font-color)  !important;
        appearance: none !important;
        border: none !important;
        border-radius: 8px !important;
@@ -1171,7 +1263,7 @@ aside .widget,
 }
 	.fbrowser .folders button:hover,
 	.fbrowser .folders button:focus {
-		background-color: rgba(255,255,255,.75)  !important;
+		background-color: var(--dimbright) !important;
 	}
 		.fbrowser .folders li:hover,
 		.fbrowser .folders li:focus {
@@ -1283,7 +1375,7 @@ aside .widget li {
 	}
 aside .vcard img.u-photo, aside img.vcard-photo {
     border-radius: 100%  !important;
-    box-shadow: 0 0 1px rgba(0,0,0,.3) !important;
+    box-shadow: 0 0 1px var(--shadowglow) !important;
     border: 3px solid var(--background-color) !important;
 }    
 aside .widget h3.p-name {
@@ -1346,13 +1438,13 @@ aside .vcard .p-addr {
 	aside .vcard #subscribe-feed-link-button,
 	aside .vcard #dfrn-request-link-button,
 	aside .vcard #wallmessage-link-button,
-	aside .vcard #show-group-button {
+	aside .vcard #showgroup-button {
 		width: 75% !important;
 		float: none !important;
 		margin: 0 auto !important;
 		padding: 5px !important;
 	} 
-		aside .vcard #show-group-button a {
+		aside .vcard #showgroup-button a {
 			width: 100% !important;
 		}
 	aside .widget, .nav-container .widget {
@@ -1490,7 +1582,7 @@ aside .widget li:hover {
 						font-size: 0px !important;
 						color: transparent !important;
 						overflow: hidden !important;
-						box-shadow: 0px 0px 5px rgba(255,255,255,.2) !important;
+						box-shadow: 0px 0px 5px var(--shadowglog) !important;
 						z-index: 10 !important;
 					}
 						.wall-item-responses div p[class*="-expanded"]:hover,
@@ -1596,7 +1688,7 @@ aside .widget li:hover {
 						color: white !important;
 						text-align: left !important;
 						overflow: hidden !important;
-						box-shadow: 0px 5px 5px rgba(0,0,0,.3) !important;
+						box-shadow: 0px 5px 5px var(--shadowglow) !important;
 						z-index: 10 !important;
 					}
 			.wall-item-responses .wall-item-dislike p:first-of-type,
@@ -1667,6 +1759,10 @@ aside .widget li:hover {
 			border-radius: 100%  !important;
 		}
 		/* Profile Cover Photo */
+		#change_coverphoto {
+			background-color: var(--link-color) !important;
+			color: white !important;
+		}
 		.row:has(.coverphoto) aside,
 		.row:has(.coverphoto) #content {
 			margin-top: 350px !important;
@@ -1759,7 +1855,7 @@ aside .widget li:hover {
         display: block !important;
     }
         .plink.u-url:hover {
-            background-color: rgba(255,255,255,.1)  !important;
+            background-color: var(--dimbright) !important;
             text-decoration: none  !important;
         }
         .plink.u-url::after {
@@ -1802,7 +1898,7 @@ body.mod-calendar .calendar-content-wrapper .fa-bullseye::before {
 	.event-buttons .btn:hover,
 	.event-buttons .btn:focus {
 		color: #fff !important;
-		box-shadow: inset 0 0 100px rgba(0,0,0,.1) !important;
+		box-shadow: inset 0 0 100px var(--dimbright) !important;
 	}
 	.fc .fc-event {
 		background-color: var(--link-color) !important;
@@ -1815,7 +1911,7 @@ body.mod-calendar .calendar-content-wrapper .fa-bullseye::before {
 		}
 		.fc .fc-event:hover,
 		.fc .fc-event:focus {
-			box-shadow: inset 0 0 100px rgba(0,0,0,.2) !important;
+			box-shadow: inset 0 0 100px var(--dimbright) !important;
 		}
 /* Photo Albums */
 .photo-album-actions .icon-padding,
@@ -1913,7 +2009,7 @@ body.mod-calendar .calendar-content-wrapper .fa-bullseye::before {
     max-width: 100% !important;
 }
 #photos-upload-perms button[data-toggle="modal"] {
-	background-color: rgba(255,255,255,.2)  !important;
+	background-color: var(--dimbright) !important;
 	padding: 0  !important;
 	height: 36px !important;
 	width:  36px !important;
@@ -1923,7 +2019,7 @@ body.mod-calendar .calendar-content-wrapper .fa-bullseye::before {
 }
 	#photos-upload-perms button[data-toggle="modal"]:hover,
 	#photos-upload-perms button[data-toggle="modal"]:focus {
-		background-color: rgba(255,255,255,.1)  !important;
+		background-color: var(--dimbright) !important;
 	}
 /* ADD-ONS */
 .advancedcontentfilter-content-wrapper table td:nth-of-type(2) {
@@ -1970,7 +2066,7 @@ body.mod-calendar .calendar-content-wrapper .fa-bullseye::before {
 	.calc-content-wrapper input[name='multiplication']:active,
 	.calc-content-wrapper input[name='division']:active,
 	.calc-content-wrapper input[name='enter']:active{
-		box-shadow: inset 0 0 100px rgba(0,0,0,.2) !important;
+		box-shadow: inset 0 0 100px var(--dimbright) !important;
 	}
 .calc-content-wrapper input[name='plus']{
 	padding-left: 10px !important;
@@ -2039,8 +2135,8 @@ body.mod-calendar .calendar-content-wrapper .fa-bullseye::before {
 		width: auto !imporrtant;
 		border-radius: 8px !important;
 		padding: 10px !important;
-		-webkit-box-shadow: 0 6px 12px rgba(255,255,255,.175) !important;
-		box-shadow: 0 6px 12px rgba(255,255,255,.175) !important;
+		-webkit-box-shadow: 0 6px 12px var(--dimbright) !important;
+		box-shadow: 0 6px 12px var(--dimbright) !important;
 	}
 		table.smiley-preview {
 			border: none !important;
@@ -2086,7 +2182,7 @@ div#back-to-top {
 }
 	#item-delete-selected:hover,
 	#item-delete-selected:focus {
-		box-shadow: inset 0 0 100px rgba(0,0,0,.2) !important;
+		box-shadow: inset 0 0 100px var(--dimbright) !important;
 	}
 	/* Profile pics in Messages and Events */
 	.event-wrapper .event-owner img,
@@ -2410,7 +2506,7 @@ body.mod-settings #delegation .contact-block-img {
 /*	Large Tablets in Portrait Orientation
 	=====================================
 */
-@media screen and (max-width: 991px){
+@media screen and (max-width: 990px){
 	/* Friendica icon upper left */
 	#banner {
 		display: block  !important;
@@ -2433,7 +2529,7 @@ body.mod-settings #delegation .contact-block-img {
     	}
     	/* force display of mobile search box */
     	#search-mobile {
-    		top: 110px  !important;
+    		top: 115px  !important;
     		border-color: black !important;
     	}
     		#search-mobile .col-xs-12 {
@@ -2729,7 +2825,7 @@ body.mod-settings #delegation .contact-block-img {
 	#topbar-first {
 		top: auto !important;
 		bottom: 0 !important;
-		box-shadow: 2px 0px 5px rgba(0,0,0,.5) !important;
+		box-shadow: 2px 0px 5px var(--shadowglow) !important;
 	}
 		#topbar-first .topbar-nav .arrow {
 			display: none !important;
@@ -2989,7 +3085,7 @@ body.mod-settings #delegation .contact-block-img {
 		}
 			.dropdown-mobile-jot > .dropdown-toggle.btn-primary:hover,
 			.dropdown-mobile-jot > .dropdown-toggle.btn-primary:focus {
-				background-color: rgba(255,255,255,.1) !important;
+				background-color: var(--dimbright) !important;
 			}
 			.dropdown-mobile-jot.open > .dropdown-toggle.btn-primary {
 				background-color: var(--link-color) !important;
@@ -3071,7 +3167,7 @@ body.mod-settings #delegation .contact-block-img {
 	}
 			#message-new:hover a,
 			#message-new:focus a {
-				box-shadow: inset 0 0 100px rgba(255,255,255,.2) !important;
+				box-shadow: inset 0 0 100px var(--dimbright) !important;
 				border-radius: 100% !important;
 			}		
 	.justified-gallery > a, 
@@ -3248,7 +3344,7 @@ body.mod-settings #delegation .contact-block-img {
 	}
 	 ul.nav-tabs li:not(.active) a:hover,
 	ul.nav-tabs li:not(.active) a:focus {
-		background-color: rgba(255,255,255,.2) !important;
+		background-color: var(--dimbright) !important;
 	}
 	ul.nav-tabs li.active {
 		border: none !important;
@@ -3303,14 +3399,19 @@ body.mod-settings #delegation .contact-block-img {
 			}
 			#topbar-first .navbar-toggle[data-target="#search-mobile"]:hover,
 			#topbar-first .navbar-toggle[data-target="#search-mobile"]:focus {
-				box-shadow: inset 0 0 100px rgba(0,0,0,.2) !important;
+				box-shadow: inset 0 0 100px var(--dimbright) !important;
 			}
 			.fa-fw {
 				width: auto !important;
 			}
 			#topbar-first .offcanvas-right-toggle {
-				top: 3px !important;
-				right: 13px !important;
+				top: -2px !important;
+				right: 10px !important;
+				padding: 0 !important;
+			}
+			#topbar-first .nav > .account {
+				top: -5px !important;
+				right: 5px !important;
 			}
 			#main-menu img {
 				border: 5px solid var(--link-color) !important;
@@ -3324,7 +3425,7 @@ body.mod-settings #delegation .contact-block-img {
         	left: 50% !important;
         	width: 80% !important;
         	margin-left: -40% !important;
-        	box-shadow: 0 0 50px rgba(0,0,0,.75) !important;
+        	box-shadow: 0 0 50px var(--shadowglow) !important;
     	}
     		#search-mobile .col-xs-12 {
     			background-color: var(--nav-bg) !important;
@@ -3346,7 +3447,7 @@ body.mod-settings #delegation .contact-block-img {
 		nav.navbar .nav > li > button:focus {
 		  background-color: var(--link-color)  !important;
 		  border-radius: 100%  !important;
-		  box-shadow: inset 0 0 100px rgba(0,0,0,.2) !important;
+		  box-shadow: inset 0 0 100px var(--dimbright) !important;
 		}
 		#topbar-first button.navbar-toggle.offcanvas-right-toggle:hover, 
 		#topbar-first button.navbar-toggle.offcanvas-right-toggle:focus {
@@ -3453,7 +3554,7 @@ body.mod-home {
  .mod-home #nav-about:hover,
 .mod-home #nav-about:focus {
 	background-color: var(--link-color) !important;
-	box-shadow: inset 0 0 100px rgba(0,0,0,.1) !important;
+	box-shadow: inset 0 0 100px var(--dimbright) !important;
 }
 .mod-home #nav-about .fa-info {
 	line-height: 24px !important;
