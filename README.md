@@ -3,6 +3,8 @@ Version: 1.8.5
 
 If the Friendica server you are on does not offer the Bookface theme modifications you can apply them in your browser. You can only use either the Light or Dark version.
 
+**NOTE: These userstyles do NOT work with the Friendica Release Candidate 2025.07-rc!**
+
 ## INSTALLATION
 
 **FIREFOX**
