@@ -1,8 +1,8 @@
 /*
     Name	 : Bookface Dark
-    Version    : 1.8.2
+    Version    : 1.8.3
     Licence    : AGPL
-    Created on : 27 AUG 2025
+    Created on : 01 NOV 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
 
    This "user styles" stylesheet will override Friendica and style it more like Facebook.
@@ -31,16 +31,16 @@
 :root {
 	/* Fonts and Colors */
     --global-font-family: "Open Sans", Arial, sans-serif, Noto Color Emoji;
-    --nav-bg: $nav_bg;
-    --link-color: $link_color;
-    --nav-icon-color: $nav_icon_color;
-    --background-color: $background_color;
-    --content-bg: var(--nav-bg);
-    --comment-bg: var(--background-color);
-    --font-color: $font_color;
-    --font-color-lighter: $font_color_lighter; 
-    --font-color-darker: $font_color_darker;
-    --menu-background-hover-color: $menu_background_hover_color;
+     --nav-bg: #252728;
+    --link-color: #0066ff;	/* match Accent Color here */
+    --nav-icon-color: #b0b3b8;
+    --background-color: #1c1c1d;
+	--content-bg: var(--nav-bg);
+	--comment-bg: var(--background-color);
+    --font-color: #cccccc;
+    --font-color-darker: #acacac;
+	--font-color-lighter: #444444;
+    --menu-background-hover-color: color-mix(in oklab, var(--link-color) 50%, black);
     --border-color: #eeeeee;
     --count-color:  #ffffff;
     --count-bg: var(--link-color);
