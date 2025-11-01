@@ -1,6 +1,6 @@
 /*
 	Name	   : Bookface Light User Styles
-	Version    : 1.8.2
+	Version    : 1.8.3
     Licence    : AGPL
     Created on : 27 AUG 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
@@ -31,16 +31,16 @@
 :root {
 	/* Fonts and Colors */
     --global-font-family: "Open Sans", Arial, sans-serif, Noto Color Emoji;
-    --nav-bg: $nav_bg;
-    --link-color: $link_color;
-    --nav-icon-color: $nav_icon_color;
-    --background-color: $background_color;
-    --content-bg: var(--nav-bg);
-    --comment-bg: var(--background-color);
-    --font-color: $font_color;
-    --font-color-lighter: $font_color_lighter; 
-    --font-color-darker: $font_color_darker;
-    --menu-background-hover-color: $menu_background_hover_color;
+   --nav-bg: #ffffff;
+    --link-color: #0066ff;	/* match Accent color here */
+    --nav-icon-color: #65686C;
+    --background-color: #f2f4f7;
+	--content-bg: var(--nav-bg);
+	--comment-bg: var(--background-color);
+    --font-color: #313131;
+    --font-color-darker: #333333;
+    --font-color-lighter: #444444;
+    --menu-background-hover-color: color-mix(in oklab, var(--link-color) 15%, white);
     --border-color: #eeeeee;
     --count-color:  #ffffff;
     --count-bg: var(--link-color);
