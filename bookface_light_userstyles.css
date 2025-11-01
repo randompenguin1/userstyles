@@ -1,6 +1,6 @@
 /*
 	Name	   : Bookface Light User Styles
-	Version    : 1.8.3
+	Version    : 1.8.5
     Licence    : AGPL
     Created on : 01 NOV 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
@@ -31,16 +31,16 @@
 :root {
 	/* Fonts and Colors */
     --global-font-family: "Open Sans", Arial, sans-serif, Noto Color Emoji;
-   --nav-bg: #ffffff;
-    --link-color: #0066ff;	/* match Accent color here */
+    --nav-bg: #ffffff;
+    --link-color: #0066ff;
     --nav-icon-color: #65686C;
     --background-color: #f2f4f7;
-	--content-bg: var(--nav-bg);
-	--comment-bg: var(--background-color);
+    --content-bg: var(--nav-bg);
+    --comment-bg: var(--background-color);
     --font-color: #313131;
-    --font-color-darker: #333333;
-    --font-color-lighter: #444444;
-    --menu-background-hover-color: color-mix(in oklab, var(--link-color) 15%, white);
+    --font-color-lighter: #333333; 
+    --font-color-darker: #444444;
+    --menu-background-hover-color: color-mix(in oklab, var(--link-color) 15% white);
     --border-color: #eeeeee;
     --count-color:  #ffffff;
     --count-bg: var(--link-color);
@@ -79,6 +79,7 @@
     --save-button-text: 'Save';  
 	--new-message-text: 'New Message';
 	--calendar-today-text: 'Today';  
+	--community-post-text: 'Community Posts MUST be Public!';
 }
 
 	body {
@@ -86,6 +87,13 @@
 		font-size: 15px  !important;
 		padding-top: 130px  !important;
 		font-family: var(--global-font-family) !important;
+		color: var(--font-color) !important;
+	}
+	body a {
+		color: var(--font-color) !important;
+	}
+	.tooltip {
+		display: var(--show-tooltips) !important;
 	}
 	.btn-link, a.btn {
 		color: var(--link-color) !important; 
@@ -272,7 +280,7 @@ ul.nav-tabs {
 				ul.nav-tabs > li.active > a,
 				ul.nav-tabs > li.active a:hover,
 				ul.nav-tabs > li.active a:focus {
-					border: none;
+					border: none !important;
 					color: var(--link-color) !important;
 					background-color: transparent !important;
 				}
@@ -587,6 +595,20 @@ ul.nav-tabs {
 			display: inline !important;
 			top: -4px !important;
 		}
+		/* Enable Posting from Community Page */
+		body.mod-community #jotOpen {
+			display: block !important;
+		}
+			body.mod-community #jot-popup {
+				display: block !important;
+			} 
+			body.mod-community #acl-wrapper::before {
+				content: var(--community-post-text);
+				margin-bottom: 10px;
+			}
+			body.mod-community #acl-wrapper .panel-info {
+				opacity: .2;
+			}
 		body.mod-notes #jotOpen::before {
 			content: var(--new-note-text) !important;
 		}
@@ -628,13 +650,13 @@ ul.nav-tabs {
 		color: var(--font-color) !important; 
 		background-color: var(--content-bg)  !important; 
 		background-image: none !important;
+		/* dark mode alters border-color here */
 		-webkit-box-shadow: 0 0 1px var(--border-color) !important; 
 		-moz-box-shadow: 0 0 1px var(--border-color) !important; 
 		box-shadow: 0 0 1px var(--border-color) !important; 
 	}
 	/* Make Submit Buttons Pretty */
 	#adminpage a.btn,
-	.settings-submit,
 	button[type="submit"],
 	input[type="submit"],
 	#photos-upload-submit,
@@ -705,7 +727,7 @@ ul.nav-tabs {
 		#settings-channels button {
 			float: right;
 		}
-	#adminpage button[type="sbumit"],
+	#adminpage button[type="submit"],
 	input[type="submit"],
 	input[name="page_logs"],
 	input[name="republish_directory"],
@@ -778,6 +800,8 @@ ul.nav-tabs {
 		background-color: var(--link-color) !important; 
 		border-radius: 8px !important; 
 		box-shadow: none !important; 
+		min-height: 36px 1important;
+		white-space: wrap !important;
 	}
 		#profile-extra-links .btn:hover,
 		#profile-extra-links .btn:focus {
@@ -869,6 +893,60 @@ ul.nav-tabs {
 	aside .badge {
 		background-color: var(--link-color) !important;
 	}
+/* 	Contributed by Matthias (feb@loma.ml):
+		Widgets mit einem Icon versehen
+		Gemeinsame Basisregeln für alle Sidebar-Icons */	
+	aside .widget.fakelink h3::before {
+		font-family: "ForkAwesome";
+		margin-right: 8px;
+		font-size: 14px;
+	}
+	
+	/* Individuelle Icons */
+	#circle-sidebar-inflated.fakelink h3::before,
+	#circle-sidebar .fakelink h3::before { content: "\f2bd" !important; } /* user-circle */
+	#saved-search-list-inflated.fakelink h3::before,
+	#saved-search-list .fakelink h3::before { content: "\f002" !important; } /* search */
+	#group-list-sidebar-inflated.fakelink h3::before,
+	#group-list-sidebar .fakelink h3::before { content: "\f0c0" !important; } /* users */
+	#nets-sidebar-inflated.fakelink h3::before,
+	#nets-sidebar .fakelink h3::before { content: "\f233" !important; } /* server */
+	#trending-tags-sidebar-inflated.fakelink h3::before,
+	#trending-tags-sidebar .fakelink h3::before,
+	#tagblock-inflated.fakelink h3::before,
+	#tagblock faklink h3::before { content: "\f02b" !important; } /* tag */
+	#datebrowse-sidebar-inflated.fakelink h3::before,
+	#datebrowse-sidebar .fakelink h3::before { content: "\f187" !important; } /* archive */
+	#file-sidebar-inflated.fakelink h3::before,
+	#file-sidebar .fakelink h3::before { content: "\f07b" !important; } /* folder */
+	#channel-sidebar-inflated.fakelink h3::before,
+	#channel-sidebar .fakelink h3::before { content: "\f009" !important; } /* th-large */
+	#accounttype-sidebar-inflated.fakelink h3::before,
+	#accounttype-sidebar .fakelink h3::before { content: "\f0e9" !important; } /* umbrella */
+	#sidebar-community-no-sharer-inflated.fakelink h3::before,
+	#sidebar-community-no-sharer .fakelink h3::before { content: "\f2c0" !important; } /* user-o */
+	#rel-sidebar-inflated.fakelink h3::before,
+	#rel-sidebar .fakelink h3::before { content: "\f2b5" !important; } /* handshake-o */
+	#category-sidebar-inflated.fakelink h3::before,
+	#category-sidebar .fakelink h3::before { content: "\f00b" !important; } /* th-list */
+
+	aside .widget.inflated.fakelink h3::after {
+		font-family: "ForkAwesome";
+  		content: "\f0d7";
+  		display: inline-block;
+  		float: right;
+	}
+	
+	aside .widget.inflated:hover,
+	aside .widget.inflated:focus,
+	aside .widget.inflated:active,
+	aside .widget.inflated:focus-within {
+		background-color: var(--nav-bg) !important;
+	}
+		aside .widget.inflated h3 {
+			padding-bottom: 0px;
+		}		
+	
 	/* POSTS */
 	.tread-wrapper {
 	  background-color: var(--content-bg) !important;
@@ -927,6 +1005,14 @@ ul.nav-tabs {
 	}
 	.contact-wrapper .media-body .contact-entry-name h4.media-heading a { 
 		color: var(--link-color) !important;
+	}
+	.contact-wrapper .contact-action-link, 
+	.contact-wrapper .contact-action-link:hover, 
+	.textcomplete-item .contact-wrapper .contact-action-link {
+		color: var(--font-color);
+	}
+	.contact-entry-desc {
+		color: var(--font-color);
 	}
 /*	
 	Dark mode has some extra styling
@@ -1168,7 +1254,7 @@ ul.nav-tabs {
 	}
 	.fbrowser .folders button {
 	   background-color: var(--dimbright) !important;
-	   color: black  !important;
+	   color: var(--font-color)  !important;
        appearance: none !important;
        border: none !important;
        border-radius: 8px !important;
@@ -1352,13 +1438,13 @@ ul.nav-tabs {
 	aside .vcard #subscribe-feed-link-button,
 	aside .vcard #dfrn-request-link-button,
 	aside .vcard #wallmessage-link-button,
-	aside .vcard #show-group-button {
+	aside .vcard #showgroup-button {
 		width: 75% !important;
 		float: none !important;
 		margin: 0 auto !important;
 		padding: 5px !important;
 	} 
-		aside .vcard #show-group-button a {
+		aside .vcard #showgroup-button a {
 			width: 100% !important;
 		}
 	aside .widget, .nav-container .widget {
@@ -1383,6 +1469,7 @@ ul.nav-tabs {
 		}
 	aside .widget li:hover {
 		background-color:rgba(255,255,255,1)  !important;
+		background-image: none !important;
 		border-color: transparent  !important;
 		border-radius: 8px !important;
 	}
@@ -1672,6 +1759,10 @@ ul.nav-tabs {
 			border-radius: 100%  !important;
 		}
 		/* Profile Cover Photo */
+		#change_coverphoto {
+			background-color: var(--link-color) !important;
+			color: white !important;
+		}
 		.row:has(.coverphoto) aside,
 		.row:has(.coverphoto) #content {
 			margin-top: 350px !important;
@@ -2040,7 +2131,7 @@ body.mod-calendar .calendar-content-wrapper .fa-bullseye::before {
 		}
 	#smileybutton {
 		position: fixed !important;
-		background-color: #fff !important;
+		background-color: var(--background-color) !important;
 		width: auto !imporrtant;
 		border-radius: 8px !important;
 		padding: 10px !important;
@@ -2370,7 +2461,7 @@ a.tag.label,
 /* Delegation Buttons and Profile Photos */
 body.mod-delegation .identity-match-photo > button {
 	background-color: transparent !important;
-	margin-bottom: 10px;
+	margin-bottom: 10px !important;
 }
 body.mod-delegation .identity-match-photo img,
 body.mod-settings #delegation .contact-block-img {
