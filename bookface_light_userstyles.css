@@ -1844,6 +1844,13 @@ ul.nav-tabs {
 	.img-allocated-max-width {
 		margin: 20px auto !important;
 	}
+	/* fix for misplaced ALT badge */
+	p > a.has(img.has-alt-description){
+        position: relative !important;
+        width: fit-content !important;
+        height: fit-content !important;
+        display: block !important;
+    }
 	#vcard-short-photo-wrapper img, 
 	#nav-short-info .contact-wrapper img {
 		border-radius: 100% !important;
