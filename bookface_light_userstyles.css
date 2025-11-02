@@ -1845,7 +1845,7 @@ ul.nav-tabs {
 		margin: 20px auto !important;
 	}
 	/* fix for misplaced ALT badge */
-	p > a.has(img.has-alt-description){
+	p > a:has(img.has-alt-description){
         position: relative !important;
         width: fit-content !important;
         height: fit-content !important;
