@@ -317,6 +317,7 @@ Just because it looks right or works in your preferred browser or device doesn't
 ## CHANGELOG:
 1.8.5 (02 NOV 2025)
 * First Userstyles release for Friendica Release Candidate
+* Fix for misplaced "ALT" badge on images.
 
 1.8 (12 July 2025)
 * * All stylesheets now have lighter font color variable.
