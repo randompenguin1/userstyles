@@ -1,9 +1,9 @@
-# Bookface User Styles for Friendica
-Version: 1.8.5
+# Bookface User Styles for Friendica Release Candidate
+Version: 1.8.5-rc
 
 If the Friendica server you are on does not offer the Bookface theme modifications you can apply them in your browser. You can only use either the Light or Dark version.
 
-**NOTE: These userstyles do NOT work with the Friendica Release Candidate 2025.07-rc!**
+**NOTE: This version ONLY WORKS with Friendica Release Candidate 2025.07-rc!**
 
 ## INSTALLATION
 
@@ -315,10 +315,8 @@ In some places fallbacks are included to accommodate older browsers or mobile de
 Just because it looks right or works in your preferred browser or device doesn't mean it will work for everyone. **Try to thoroughly *test* your edits** in desktop and mobile Chromium-based, Mozilla-based, and Webkit-based browsers before submitting a pull-request.
 
 ## CHANGELOG:
-1.8.5 (01 NOV 2025)
-* Fixed misaligned "View Group" button on Group profile page.
-* Removed accidentally added PHP vars to CSS vars 
-* Brought the rest of features up to parity with server-side version 1.8.5
+1.8.5 (02 NOV 2025)
+* First Userstyles release for Friendica Release Candidate
 
 1.8 (12 July 2025)
 * * All stylesheets now have lighter font color variable.
