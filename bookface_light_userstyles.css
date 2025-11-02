@@ -1,6 +1,6 @@
 /*
 	Name	   : Bookface Light User Styles
-	Version    : 1.8.5
+	Version    : 1.8.5-rc
     Licence    : AGPL
     Created on : 01 NOV 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
@@ -60,11 +60,6 @@
     --navbar-calendar-text: 'Calendar';
     --navbar-contact-text: 'Friends';
     --navbar-notices-text: 'Notices';
-    --sign-in-text: 'Sign-In';
-    --compose-text: 'Compose';
-    --new-note-text: 'New Note';
-    --save-search-text: 'Save Search';
-    --follow-tag-text: 'Follow Tag';
     --comment-button-text: 'Comment';
     --share-button-text: 'Share';
     --quote-button-text: 'Quote';
@@ -74,11 +69,8 @@
     --attendyes-button-text: 'Going';
     --attendno-button-text: 'Can\'t Go';
     --attendmaybe-button-text: 'Maybe';
-    --add-photo-button-text: 'Add Photos';
     --follow-button-text: 'Follow';
     --save-button-text: 'Save';  
-	--new-message-text: 'New Message';
-	--calendar-today-text: 'Today';  
 	--community-post-text: 'Community Posts MUST be Public!';
 }
 
@@ -111,6 +103,19 @@
 	.btn-link.active {
 		color: var(--link-color) !important;
 	} 
+	.btn.btn-primary {
+		color: var(--nav-icon-color) !important;
+		background-color: transparent !important;
+		border: none !important;
+		box-shadow: none !important;
+	}
+		.btn.btn-primary:hover,
+		.btn.btn-primary:focus,
+		.btn.btn-primary:active,
+		.btn.btn-primary:focus-within {
+			color: var(--nav-icon-color) !important;
+			background-color: rgba(128,128,128,.1) !important;
+		}
 	.text-muted {
 		color: var(--font-color-lighter) !important;
 	} 
@@ -208,7 +213,7 @@
 	nav.navbar .nav > li > button:hover, 
 	nav.navbar .nav > li > button:focus {
 	  background-color: rgba(128,128,128,.1)  !important;
-		border-radius: 8px  !important;
+	  border-radius: 8px  !important;
 		
 	}
 	#topbar-first button.navbar-toggle,
@@ -240,7 +245,7 @@
 	}
 	.notif-item img.notif-image,
 	.intro-photo-wrapper img.intro-photo {
-		border-radius: 100%;
+		border-radius: 100% !important;
 	}
 ul.nav-tabs {
 	display: flex !important;
@@ -288,7 +293,7 @@ ul.nav-tabs {
 		padding-bottom: 15px  !important;
         background-color: var(--nav-bg)  !important;
         border: 1px solid var(--background-color)  !important;
-        /* dark version adjusts box shadow */
+        box-shadow: 0 0 5px var(--shadowglow) !important;
 	}
 		.dropdown-menu li {
 			margin: 3px 10px !important;
@@ -328,6 +333,7 @@ ul.nav-tabs {
 			.dropdown-menu > li.active:focus > a {
 				color: var(--link-color) !important;
 				background-color: transparent !important;
+				background-image: none !important;
 			}
     .form-control {
     	background: var(--nav-bg) !important;
@@ -419,9 +425,13 @@ ul.nav-tabs {
 		border-radius: 50px  !important;
 		background: transparent  !important;
 		width: 100%  !important;
+		padding-left: 30px !important;
 	}
 	#search-box .form-control::placeholder {
 		color: #666  !important;
+	}
+	#nav-search-input-field {
+		padding-right: 12px !important;
 	}
 	#topbar-first #search-box .btn {
 		font-size: 0px  !important;
@@ -444,36 +454,6 @@ ul.nav-tabs {
 	#nav-user-menu {
 		min-width: 250px  !important;
 		overflow-x: hidden !important;
-	}
-	/* add missing main menu icons */ 
-	#nav-user-menu li a::before,
-	#offcanvasUsermenu li a::before {
-		font-family: ForkAwesome;
-		margin-right: 5px;
-	}
-	#nav-user-menu li:nth-of-type(1) a::before,
-	#offcanvasUsermenu li:nth-of-type(2) a::before {
-		content: '\f27a';
-	}
-	#nav-user-menu li:nth-of-type(2) a::before,
-	#offcanvasUsermenu li:nth-of-type(3) a::before {
-		content: '\f007';
-	}
-	#nav-user-menu li:nth-of-type(3) a::before,
-	#offcanvasUsermenu li:nth-of-type(4) a::before {
-		content: '\f03e';
-	}
-	#nav-user-menu li:nth-of-type(4) a::before,
-	#offcanvasUsermenu li:nth-of-type(5) a::before {
-		content: '\f044';
-	}
-	#nav-user-menu li:nth-of-type(5) a::before,
-	#offcanvasUsermenu li:nth-of-type(6) a::before {
-		content: '\f073';
-	}
-	#nav-user-menu li:nth-of-type(6) a::before,
-	#offcanvasUsermenu li:nth-of-type(7) a::before {
-		content: '\f02d';
 	}
 	.nav-pills .dropdown-menu li a, 
 	.nav-pills .dropdown-menu li .btn-link, 
@@ -586,15 +566,6 @@ ul.nav-tabs {
 		#jotOpen:hover, #jotOpen:focus {
 			box-shadow: inset 0 0 100px var(--dimbright) !important;
 		}
-		#jotOpen::before {
-			content: var(--compose-text) !important;
-			font-size: 15px !important;
-			margin-right: 10px !important;
-			line-height: 32px !important;
-			position: relative !important;
-			display: inline !important;
-			top: -4px !important;
-		}
 		/* Enable Posting from Community Page */
 		body.mod-community #jotOpen {
 			display: block !important;
@@ -609,9 +580,6 @@ ul.nav-tabs {
 			body.mod-community #acl-wrapper .panel-info {
 				opacity: .2;
 			}
-		body.mod-notes #jotOpen::before {
-			content: var(--new-note-text) !important;
-		}
 		body.mod-notes .sectiontop h3::before {
   			content: '\f023' !important;
   			font-family: ForkAwesome !important;
@@ -655,6 +623,12 @@ ul.nav-tabs {
 		-moz-box-shadow: 0 0 1px var(--border-color) !important; 
 		box-shadow: 0 0 1px var(--border-color) !important; 
 	}
+	.panel { 
+		-webkit-box-shadow: 0 0 1px var(--border-color) !important;
+		-moz-box-shadow: 0 0 1px var(--border-color) !important;
+		box-shadow: 0 0 1px var(--border-color) !important;
+	}
+	
 	/* Make Submit Buttons Pretty */
 	#adminpage a.btn,
 	button[type="submit"],
@@ -744,6 +718,14 @@ ul.nav-tabs {
 	#photo-edit-end {
 		clear: both !important;
 	}
+	#photo_edit_form::after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+	body.mod-photos #photo-tags {
+		margin-bottom: 10px !important;
+	}
 	/* Group Request Cancel/Confirm */
 	#dfrn-request-submit-wrapper input {
 		margin: 5px;
@@ -762,9 +744,9 @@ ul.nav-tabs {
 		border-radius: 8px  !important;
 		background-color: var(--link-color)  !important;
 		color: #ffffff  !important;
-		/* frio border-color */
-		/* frio box-shadow */
-		padding: 0 16px  !important;
+		border-color: transparent !important
+		box-shadow: none !important;
+		padding: 0 8px  !important;
 	}
 		#mention-link:hover,
 		#mention-link:focus {
@@ -783,13 +765,16 @@ ul.nav-tabs {
 			font-size: 15px !important;
 			margin-right: 10px !important;
 			line-height: 32px !important;
-			top: 6px !important;
+			top: 0px !important;
 			position:relative !important;
 			display: block !important;
-			padding-right: 30px !important;
 		}
 	#rfic-desc, #remote-friends-in-common { 
 		background-color: var(--content-bg) !important;
+	}
+	#remote-friends-in-common .profile-match-photo a { 
+		border-radius: 100% !important;
+		overflow: hidden !important;
 	}
 	#contact-edit-status-wrapper {
 		margin: 15px 0px  !important;
@@ -807,6 +792,12 @@ ul.nav-tabs {
 		#profile-extra-links .btn:focus {
 			box-shadow: inset 0 0 100px var(--dimbright) !important;
 		} 
+	#show-group-button {
+		text-align: center !important;
+	}
+		#show-group-button #show-group {
+			width: 71% !important;
+		}
 	/* SEARCH RESULTS */
 	#search-save {
 		background-color: var(--link-color)  !important;
@@ -829,28 +820,9 @@ ul.nav-tabs {
 		display: inline-block !important;
 		margin-top: 2px !important;
 	}
-	#search-save .fa-floppy-o::after,
-	#search-save .fa-plus::after{
-		content: var(--save-search-text) !important;
-		font-family: var(--global-font-family) !important;
-		font-size: 15px !important;
-		float: left !important;
-		margin-right: 10px !important;
-		line-height: 32px !important;
-		position: relative !important;
-		display: block !important;
-		top: -2px !important;
-		font-weight: 700 !important;
-	}
-	#search-save .fa-floppy-o::after {
-		  content: var(--save-search-text) !important;
-	}
 	#search-save .fa-plus::before {
 		display: inline-block !important;
 		margin-top: 2px !important;
-	}
-	#search-save .fa-plus::after {
-		  content: var(--follow-tag-text) !important;
 	}
 	/* popovers */
 	.popover.hovercard {
@@ -892,6 +864,11 @@ ul.nav-tabs {
 	}
 	aside .badge {
 		background-color: var(--link-color) !important;
+	}
+	
+	aside .widget button.fakelink {
+		width: 100% !important;
+		text-align: left !important;
 	}
 /* 	Contributed by Matthias (feb@loma.ml):
 		Widgets mit einem Icon versehen
@@ -977,6 +954,7 @@ ul.nav-tabs {
 	}
 	.wall-item-container .media {
 		background-color: var(--content-bg) !important;
+		box-shadow: 0 0px 1px var(--border-color) !important;
 		border-radius: 10px  !important;
 	}
 	.wall-item-container iframe {
@@ -985,18 +963,18 @@ ul.nav-tabs {
 		display: block !important;
 		margin: 0 auto !important;
 		aspect-ratio: 16/9 !important;
-		border: 1px solid #ccc !important;
+		border: 1px solid var(--border-color) !important;
 		border-radius: 8px !important;
-		background-color: #000 !important;
+		background-color: var(--background-color) !important;
 	}
-	/*
-		Dark mode has some extra styling
-		here light mode does not need
-	*/
+.well {
+       -webkit-box-shadow: none !important;
+       box-shadow: none !important;
+}
 		.contact-photo,
 		.contact-photo-xs {
 			border-radius: 100%  !important;
-			border: 1px solid #eee  !important;
+			border: 1px solid var(--nav-bg)  !important;
 		}
 	.media-list > li:hover,
 	.media-list > li.selected,
@@ -1014,14 +992,14 @@ ul.nav-tabs {
 	.contact-entry-desc {
 		color: var(--font-color);
 	}
-/*	
-	Dark mode has some extra styling
-	here for the .hovercard element
-*/
+.hovercard {
+       background-color: var(--nav-bg) !important;
+       border: 1px solid var(--background-color) !important;        
+}
 		.hover-card-pic img.thumbnail {
 			border-radius: 100%  !important;
-			/* frio background-color */
-			/* frio border-color */
+			background-color: var(--background-color) !important;
+			border-color: var(--border-color) !important;
 		}
 		p.wall-item-announce,
 		.media .time, .media .shared-time,
@@ -1058,8 +1036,8 @@ ul.nav-tabs {
 			display: block !important;
 			white-space: normal  !important;
 			margin: 0 auto  !important;
-			/* frio -webkit-box-shadow */
-			/* frio box-shadow */
+			-webkit-box-shadow: none !important;
+			box-shadow: none !important;
 		}
 		.wall-item-actions-row button::after,
 		.wall-item-actions-right button::after {
@@ -1239,7 +1217,7 @@ ul.nav-tabs {
 			.photo-comment-wrapper .btn-sm:hover,
 			.photo-comment-wrapper .btn-sm:focus,
 			#profile-jot-wrapper .btn-sm:hover,
-			#profile-job-wrapper .btn-sm:focus,
+			#profile-jot-wrapper .btn-sm:focus,
 			.wall-item-comment-wrapper .btn-sm:hover,
 			.wall-item-comment-wrapper .btn-sm:focus {
 				background-color: transparent !important;
@@ -1247,7 +1225,7 @@ ul.nav-tabs {
 			} 
 	#jot-modal-content input,
 	#jot-modal-content .friendica-tagsinput {
-		   background-color: #fff  !important;
+		   background-color: var(--background-color) !important;
 	}
 	#filebrowser .breadcrumb{
 		background-color: var(--background-color) !important;
@@ -1265,10 +1243,10 @@ ul.nav-tabs {
 	.fbrowser .folders button:focus {
 		background-color: var(--dimbright) !important;
 	}
-		   .fbrowser .folders li:hover,
-		   .fbrowser .folders li:focus {
-		   border-color: transparent  !important;
-		   background-color: transparent  !important;
+	.fbrowser .folders li:hover,
+	.fbrowser .folders li:focus {
+		border-color: transparent  !important;
+		background-color: transparent  !important;
 	}
 	.fbrowser-content-container.justified-gallery {
     	max-height: 100% !important;
@@ -1337,7 +1315,7 @@ ul.nav-tabs {
 			color: white  !important;
 			border-radius: 8px  !important;
 		}
-		 #upload-photo:hover,
+		#upload-photo:hover,
 		#upload-photo:focus {
 			background-color: darkblue  !important;
 		}
@@ -1465,7 +1443,7 @@ ul.nav-tabs {
 		font-weight: bold !important;
 	}
 		aside .widget li.selected a:hover {
-			color: #333 !important;
+			color: var(--font-color) !important;
 		}
 	aside .widget li:hover {
 		background-color:rgba(255,255,255,1)  !important;
@@ -1871,10 +1849,6 @@ ul.nav-tabs {
 		border-radius: 100% !important;
 	}
 /* Calendar */
-body.mod-calendar .calendar-content-wrapper .fa-bullseye::before {
-	content: var(--calendar-today-text) !important;
-	font-family: var(--global-font-family) !important;
-} 
 .fc-unthemed td.fc-today {
 	background-color: rgba(128,128,128,.1) !important;
 	background-image: linear-gradient(var(--menu-background-hover-color),var(--menu-background-hover-color)) !important;
@@ -1918,59 +1892,61 @@ body.mod-calendar .calendar-content-wrapper .fa-bullseye::before {
 .photo-edit-link-wrap .icon-padding {
     margin-left: 10px  !important;
 }
-.photos-upload-link {
-    font-size: 28px !important;
-    color: var(--link-color)  !important;
-    opacity: 1  !important;
-    border-radius: 8px !important;
-    padding: 0px 8px !important;
+.photo-album-edit-name,
+#photo-album-edit-submit {
+	width: 100% !important;
 }
+	#photo-album-edit-submit input {
+		float: right !important;
+		margin-top: 10px !important;
+		width: auto !important;
+	}
 #photo-album-link {
-    opacity: 1  !important;
+    opacity: 1 !important;
+    padding: 8px 16px !important;
+    border-radius: 8px !important;
+    position: relative !important;
+    top: 9px !important;
+    color: var(--nav-icon-color) !important;
 }
-.photos-upload-link i,
-#photo-album-link i,
-#photo-edit-link i,
-#photo-toprofile-link i,
-#album-edit-link i,
-#album-drop-link i,
+	#photo-album-link:hover,
+	#photo-album-link:focus,
+	#photo-album-link:active,
+	#photo-album-link:focus-within {
+		background-color: var(--dimbright) !important;
+	}
+.widget .photos-upload-link i,
 .photos-order-link i {
-    font-size: 24px  !important;
-    color: var(--link-color)  !important;
-    opacity: 1  !important;
-    border-radius: 100%  !important;
-    padding: 8px 11px  !important;
+    font-size: 24px !important;
+    color: var(--link-color) !important;
+    opacity: 1 !important;
+    border-radius: 100% !important;
+    padding: 8px 11px !important;
     height: 40px !important;
     width:  40px !important;
 }
-    #photo-edit-link i.fa-image {
-        padding: 6px 7px  !important;
-    }
-.photos-order-link {
-    margin-top: 5px  !important;
+.widget .photos-upload-link i {
+	position: relative !important;
+	top: -9px !important;
+	left: 19px !important;
 }
-    .photos-upload-link:hover i,
-    .photos-upload-link:focus i,
-    #photo-album-link:hover i,
-    #photo-album-link:focus i,
-    #photo-edit-link:hover i,
-    #photo-toprofile-link:hover i,
-    #photo-toprofile-link:focus i,
-    #album-edit-link:hover i,
-    #album-edit-link:focus i,
-    #album-drop-link:hover i,
-    #album-drop-link:focus i,
-    .photos-order-link:hover i,
-    .photos-upload-link:hover i,
-    .photos-upload-link:focus i {
-        background-color: rgba(128,128,128,.1)  !important;
+#photo-edit-link i.fa-image {
+    padding: 6px 7px !important;
+}
+.photos-order-link {
+    margin-top: 0px !important;
+}
+    .photos-order-link:hover i, 
+    .widget .photos-upload-link:hover i,
+    .widget .photos-upload-link:focus i {
+       background-color: var(--dimbright) !important;
     }
-.photos-content-wrapper .photos-upload-link::before {
-    content: var(--add-photo-button-text) !important;
-    font-size: 15px !important; 
-    vertical-align: middle !important; 
-    margin-top: -10px !important;
-    display: inline-block !important;
+	#photo-toprofile-link, .photo-back-link, #album-drop-link {
+  		margin-right: 0px !important;
+	}
+.photos-content-wrapper h3,
+#photo-album-title {
+	margin-top: 5px !important;
 }
 .justified-gallery {
     overflow: visible  !important;
@@ -2007,7 +1983,7 @@ body.mod-calendar .calendar-content-wrapper .fa-bullseye::before {
 #photo-photo {
     margin: 0 auto  !important;
     max-width: 100% !important;
-}	
+}
 #photos-upload-perms button[data-toggle="modal"] {
 	background-color: var(--dimbright) !important;
 	padding: 0  !important;
@@ -2020,7 +1996,7 @@ body.mod-calendar .calendar-content-wrapper .fa-bullseye::before {
 	#photos-upload-perms button[data-toggle="modal"]:hover,
 	#photos-upload-perms button[data-toggle="modal"]:focus {
 		background-color: var(--dimbright) !important;
-	}		
+	}
 /* ADD-ONS */
 .advancedcontentfilter-content-wrapper table td:nth-of-type(2) {
   word-wrap: anywhere !important;
@@ -2150,13 +2126,13 @@ body.mod-calendar .calendar-content-wrapper .fa-bullseye::before {
 		width: 32px !important;
 		height: 32px !important;
 	}
-		/*		
-			BOOKFACE
-			DARK MODE
-			HAS ADDITIONAL
-			STYLING
-			HERE
-		*/
+		#postboxbutton {
+			background-color: var(--background-color) !important;
+			box-shadow: 0 6px 12px var(--dimbright) !important;
+		}
+		div.preview-postbox > button {
+			border: 1px solid var(--border-color) !important;
+		}
 /* MISCELLANEOUS STUFF */
 div#back-to-top {
 	bottom: 65px !important;
@@ -2190,9 +2166,6 @@ div#back-to-top {
 	.mail-list-outside-wrapper .contact-photo-wrapper img {
 		border-radius: 100% !important;
 	}
-	#message-new a::after {
-		content: var(--new-message-text);
-	}
 		#message-new a {
 			color: var(--link-color) !important;
 			opacity: 1 !important;
@@ -2212,7 +2185,11 @@ div#back-to-top {
 			#message-preview .media-list a:hover,
 			#message-preview .media-list a:focus {
 				color: var(--link-color) !important;
-			}		
+			}
+		/* change icon on message submit for consistency */
+		#prvmail-submit i::before {
+			content: '\f0e0' !important;
+		}			
 .modal-backdrop {
 	background-color: #fff !important;
 }
@@ -2446,6 +2423,10 @@ a.tag.label,
 		border: 1px solid limegreen !important;
 		border-radius: 100% !important;
 	}
+		.intro-wrapper button.intro-action-link:hover {
+			background-color: limegreen !important;
+			color: white !important;
+		}
 	.intro-form {
 		margin-left: 8px !important;
 	}
@@ -2530,8 +2511,17 @@ body.mod-settings #delegation .contact-block-img {
     	/* force display of mobile search box */
     	#search-mobile {
     		top: 115px  !important;
-    		/* frio border-color */
+    		border-color: var(--border-color) !important;
     	}
+   		#search-mobile .navbar-form {
+    			padding: 10px !important;
+    		}
+    			#search-mobile input {
+    				width: 100% !important;
+    			}
+    			#search-mobile .form-button-search {
+    				border-radius: 50px !important;
+    			}
     		#search-mobile .col-xs-12 {
     			background-color: var(--nav-bg) !important;
     		}
@@ -2561,13 +2551,17 @@ body.mod-settings #delegation .contact-block-img {
 	#topbar-first #nav-notifications-menu-btn::after{
 		display: none;
 	}
-    #jotOpen::before {
-        content: '' !important;
-        margin: 0 !important;
+    #jotOpen span,
+    #search-save span,
+    #mention-link span {
+        display: none !important;
     }
-	#jot-modal .dropdown.jot-nav {
-		display: none !important;
-	}
+    	#jotOpen i,
+    	#search-save i,
+    	#mention-link i {
+    		width: 100% !important;
+    		text-align: center !important;
+    	}
     #mention-link {
     	padding: 0 8px !important;
     }
@@ -2792,6 +2786,9 @@ body.mod-settings #delegation .contact-block-img {
 		left: 10%  !important;
 		margin-left: 0 !important;
 	}
+		.topbar ul.nav li.sr-only {
+			display: none !important;	/* mobile UI does not need keyboard nav support I guess? */
+		}
 	#search-save {
 		width: 100px  !important;
 	}
@@ -3127,6 +3124,9 @@ body.mod-settings #delegation .contact-block-img {
 			padding-top: 60px !important;
 			padding-bottom: 60px !important;
 		}
+		body.mod-community #jotOpen {
+			line-height: 30px !important;
+		}
 		body.mod-profile #sidebar-photos-albums::before {
 			top: 125px !important;
 		}
@@ -3169,7 +3169,7 @@ body.mod-settings #delegation .contact-block-img {
 			#message-new:focus a {
 				box-shadow: inset 0 0 100px var(--dimbright) !important;
 				border-radius: 100% !important;
-			}	
+			}
 	.justified-gallery > a, 
 	.justified-gallery > div, 
 	.justified-gallery > figure{
@@ -3180,11 +3180,24 @@ body.mod-settings #delegation .contact-block-img {
 	.intro-actions {
 		position: relative !important;
 		float: none !important;
-	}	
+	}
 	/* Jot Plugin Buttons */
 	#profile-jot-plugin-wrapper {
 		width: 100% !important;
 	}
+	#photo-edit-link-wrap.pull-right a {
+		font-size: 0px !important;
+		border-radius: 100% !important;
+		height: 40px !important;
+		width:  40px !important;
+		text-align: center !important;
+		padding: 7px 0 0 0 !important;
+		line-height: 40px !important;
+	}
+		#photo-edit-link-wrap.pull-right a i {
+			font-size: 24px !important;
+		}
+			
 }
 /*	Frio Theme Cut-Off (double sidebar width)
 	=========================================
@@ -3305,12 +3318,7 @@ body.mod-settings #delegation .contact-block-img {
 			display: block !important;
 			margin: 0 auto !important;
 		}
-		.wall-item-responses:has(> :last-child:nth-child(7)) .wall-item-dislike p:first-of-type, 
-		.wall-item-responses:has(> :last-child:nth-child(7)) .wall-item-announce p:first-of-type, 
-		.wall-item-responses:has(> :last-child:nth-child(7)) .wall-item-attendno p:first-of-type, 
-		.wall-item-responses:has(> :last-child:nth-child(7)) .wall-item-attendmaybe p:first-of-type,
-		.wall-item-container .wall-item-responses > div p:first-of-type,
-		.wall-item-container .wall-item-responses > div p:only-child::after {
+		.wall-item-responses > div p:first-of-type {
 			text-align: center !important;
 		}
 		.wall-item-responses > div p:only-child a {
@@ -3534,7 +3542,7 @@ body.mod-settings #delegation .contact-block-img {
  		.coverphoto {
 			top: 0px !important;
 		}	
-	}
+}
 /* LOGIN AND INFO SCREENS */
 body.mod-home {
 	padding-top: 10px !important;
@@ -3561,6 +3569,31 @@ body.mod-home {
 	width: auto !important;
 	display: block !important;
 }
+.mod-home.is-not-singleuser .login-form,
+.mod-login #content #login-form,
+.mod-home.is-not-singleuser .login-form::before, 
+.mod-login #content #login-form::before,
+.mod-home.is-not-singleuser .login-form::after, 
+.mod-login #content #login-form::after {
+	border-radius: 20px !important;
+}
+/* so userstyles do no make form text invisible */
+#login-form input.form-control {
+	background-color: white !important;
+	color: black !important;
+}
+#login-submit-button {
+	background-color: var(--link-color) !important;
+	color: white !important;
+}
+	#login-submit-button:hover,
+	#login-submit-button:focus,
+	#login-submit-button:active,
+	#login-submit-button:focus-within {
+		background-color: var(--link-color) !important;
+		color: white !important;
+		box-shadow: inset 0 0 100px var(--dimbright);
+	}
 	@media screen and (max-width: 768px){
 		.mod-home #nav-about .fa-info {
 			line-height: 32px !important;
