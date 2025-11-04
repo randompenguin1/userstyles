@@ -1,5 +1,5 @@
 # Bookface User Styles for Friendica Release Candidate
-Version: 1.8.5-rc
+Version: 1.8.6-rc
 
 If the Friendica server you are on does not offer the Bookface theme modifications you can apply them in your browser. You can only use either the Light or Dark version.
 
@@ -315,6 +315,8 @@ In some places fallbacks are included to accommodate older browsers or mobile de
 Just because it looks right or works in your preferred browser or device doesn't mean it will work for everyone. **Try to thoroughly *test* your edits** in desktop and mobile Chromium-based, Mozilla-based, and Webkit-based browsers before submitting a pull-request.
 
 ## CHANGELOG:
+* Tweaks for consistency with server-side styles.
+
 1.8.5 (02 NOV 2025)
 * First Userstyles release for Friendica Release Candidate
 * Fix for misplaced "ALT" badge on images.
