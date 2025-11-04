@@ -1,8 +1,8 @@
 /*
 	Name	   : Bookface Light User Styles
-	Version    : 1.8.5-rc
+	Version    : 1.8.6-rc
     Licence    : AGPL
-    Created on : 01 NOV 2025
+    Created on : 04 NOV 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
     
 	This "user styles" stylesheet will override Friendica and style it more like Facebook.
@@ -560,6 +560,8 @@ ul.nav-tabs {
 			border-radius: 8px  !important;
 			background-color: var(--link-color)  !important;
 			color: #ffffff  !important;
+			height: 46px;
+			line-height: 30px !important;
 			/* frio border-color */
 			/* frio box-shadow */
 		}
@@ -631,8 +633,8 @@ ul.nav-tabs {
 	
 	/* Make Submit Buttons Pretty */
 	#adminpage a.btn,
-	button[type="submit"],
-	input[type="submit"],
+	button[type="submit"].btn,
+	input[type="submit"].btn,
 	#photos-upload-submit,
 	#photo-edit-submit-button {
 		background-color: var(--link-color)  !important;
@@ -652,14 +654,16 @@ ul.nav-tabs {
     #adminpage a.btn:focus,
 	.settings-submit:hover,
 	.settings-submit:focus,
-	button[type="submit"]:hover,
-	button[type="submit"]:focus,
-	input[type="submit"]:hover,
-	input[type="submit"]:focus,
+	button[type="submit"].btn:hover,
+	button[type="submit"].btn:focus,
+	input[type="submit"].btn:hover,
+	input[type="submit"].btn:focus,
 	#photos-upload-submit:hover,
 	#photos-upload-submit:focus,
 	#photo-edit-submit-button:hover,
 	#photo-edit-submit-button:focus{
+		background-color: var(--link-color) !important;
+		color: white !important;
 		box-shadow: inset 0 0 100px var(--dimbright) !important;
 	}
 	 #delegate-parent .submit button {
@@ -804,6 +808,7 @@ ul.nav-tabs {
 		color: white  !important;
 		border-radius: 8px  !important;
 		padding: 6px 8px  !important;
+		height: 46px;
 	}
 		#search-save:hover,
 		#search-save:focus {
@@ -2558,6 +2563,9 @@ body.mod-settings #delegation .contact-block-img {
 	#topbar-first #nav-notifications-menu-btn::after{
 		display: none;
 	}
+	#jotOpen i {
+		padding-top: 8px !important;
+	}
     #jotOpen span,
     #search-save span,
     #mention-link span {
@@ -2570,7 +2578,7 @@ body.mod-settings #delegation .contact-block-img {
     		text-align: center !important;
     	}
     #mention-link {
-    	padding: 0 8px !important;
+    	padding: 4px !important;
     }
     #mention-link span:last-of-type {
         display: none !important;
@@ -3056,6 +3064,9 @@ body.mod-settings #delegation .contact-block-img {
 			border: none !important;
     		box-shadow: none !important;
 		}
+			#mention-link {
+				padding-top: 0px !important;
+			}
 			#jot-modal ul.jot-nav {
 				display: none !important;
 			}
