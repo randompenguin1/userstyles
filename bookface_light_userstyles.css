@@ -1,6 +1,6 @@
 /*
 	Name	   : Bookface Light User Styles
-	Version    : 1.8.6-rc
+	Version    : 1.8.7-rc
     Licence    : AGPL
     Created on : 04 NOV 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
@@ -1342,6 +1342,9 @@ ul.nav-tabs {
 		padding: 5px !important;
 		background-color: #ffffff !important;
 		border-radius: 100%
+	}
+	#change-profile-picture {
+		border-radius: 100%;
 	}
 	#rfic-desc, #remote-friends-in-common { 
 		background-color: var(--content-bg) !important;
